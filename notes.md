@@ -1,0 +1,1 @@
+**Banco de Dados:** O banco de dados deve estar configurado corretamente, e os modelos Django para animais, registros médicos, históricos de adoção, cuidadores e voluntários devem ser definidos de acordo com as especificações.
