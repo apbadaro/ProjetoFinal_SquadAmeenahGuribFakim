@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "adocoes",
-    "pagina_inicial",
-    "cadastro_voluntarios",
-    "bootstrap5"
+    "bootstrap5",
 ]
 
 MIDDLEWARE = [
