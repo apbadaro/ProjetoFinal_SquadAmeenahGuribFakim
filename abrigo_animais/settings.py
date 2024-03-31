@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "adocoes",
     "pagina_inicial",
     "cadastro_voluntarios",
-    
+    "bootstrap5"
 ]
 
 MIDDLEWARE = [
