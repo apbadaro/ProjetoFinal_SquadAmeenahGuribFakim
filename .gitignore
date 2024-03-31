@@ -3,6 +3,9 @@
 __pycache__/
 venv/
 notes.md
+site-packages
+Scripts
+pyvenv.cfg
 .venv/
-
 anotacoes_diversas_MM
+
