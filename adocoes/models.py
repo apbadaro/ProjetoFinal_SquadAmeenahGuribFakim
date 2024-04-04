@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Animal(models.Model):
@@ -13,8 +14,15 @@ class Animal(models.Model):
         ("F", "Fêmea"),
     ]
     sexo = models.CharField(max_length=1, choices=SEXO)
-    idade = models.IntegerField(null=True)
-    raca = models.CharField(max_length=50, verbose_name="Raça")
+    CASTRADO = [
+        ("S", "Sim"),
+        ("N", "Não"),
+    ]
+    castrado = models.CharField(
+        max_length=1, choices=CASTRADO, verbose_name="Animal castrado?"
+    )
+    idade = models.CharField(null=True, max_length=30)
+    raca = models.CharField(null=True, max_length=50, verbose_name="Raça")
     historico_saude = models.TextField(verbose_name="Histórico de Saúde")
     data_entrada = models.DateTimeField(
         null=True, db_column="Data de Entrada", verbose_name="Data de Entrada"
@@ -24,6 +32,7 @@ class Animal(models.Model):
     class Meta:
         verbose_name = "Animal"
         verbose_name_plural = "Animais"
+        ordering = ["id"]
 
     def __str__(self):
         return f"{self.nome} - {self.especie} - {self.sexo}"
@@ -36,30 +45,43 @@ class Funcionario(models.Model):
     _telefone = models.CharField(
         max_length=20, verbose_name="Telefone", db_column="Telefone"
     )
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         verbose_name = "Funcionário"
         verbose_name_plural = "Funcionários"
+        ordering = ["id"]
 
     def get_telefone(self):
         return self._telefone
 
+    def save(self, *args, **kwargs):
+        super(Funcionario, self).save(*args, **kwargs)
+        if not self.user:
+            username = self.email
+            self.user = User.objects.create_user(username=username)
+            self.save()
+
     def __str__(self):
-        return f"Funcionário: {self.nome}, {self.cargo}"
+        return f"{self.user.username if self.user else 'Usuário não associado'} - Funcionário: {self.nome}, {self.cargo}"
 
 
 class Solicitante(models.Model):
     nome = models.CharField(max_length=100)
-    _cpf = models.IntegerField(verbose_name="CPF", db_column="CPF")
+    _cpf = models.CharField(max_length=14, verbose_name="CPF", db_column="CPF")
     email = models.EmailField()
     telefone = models.CharField(max_length=15)
     data_cadastro = models.DateTimeField(
         auto_now_add=True, verbose_name="Data de Cadastro"
     )
+    # user = models.OneToOneField(
+    #     User, on_delete=models.CASCADE, default=None, blank=True, null=True
+    # )
 
     class Meta:
         verbose_name = "Solicitante"
         verbose_name_plural = "Solicitantes"
+        ordering = ["id"]
 
     def get_cpf(self):
         return self._cpf
@@ -79,7 +101,7 @@ class Adocao(models.Model):
     )
 
     def __str__(self):
-        return f"{self.solicitante.nome} - {self.animal.nome} - {self.status}"
+        return f"{self.solicitante.nome} - {self.animal} - {self.status}"
 
     class Meta:
         verbose_name = "Adoção"

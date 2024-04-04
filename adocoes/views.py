@@ -16,31 +16,31 @@ def adocoes(request):
             f"Ocorreu um erro ao listar as adoções: {str(e)}"
         )
 
+    # Página de listagem de todas as adoções
     return render(request, "adocoes.html", {"adocoes": adocoes, "animais": animais})
 
 
 @login_required
 def adocao_detalhes(request, pk):
     try:
-        adocao = get_object_or_404(
-            Adocao, pk=pk
-        )  # Puxa os detalhes de uma adoção específica com base na chave primária (pk)
+        # Puxa os detalhes de uma adoção específica com base na chave primária (pk)
+        adocao = get_object_or_404(Adocao, pk=pk)
     except Adocao.DoesNotExist:
         raise Http404("Adoção não encontrada.")
 
-    return render(request, "adocao_detalhes.html", {"adocao": adocao})
+    # Página dos detalhes de uma adoção específica
+    return render(request, "detalhes.html", {"adocao": adocao})
 
 
 @login_required
 def adocao_criar(request):
     if request.method == "POST":
         try:
-            # Se o método da requisição for POST,
-            # instancia um novo formulário com os dados submetidos
             form = AdocaoForm(request.POST)
-            if form.is_valid():  # Se o formulário for válido, salva a adoção no BD
+            if form.is_valid():
                 adocao = form.save(commit=False)
-                adocao.solicitante = request.user.solicitante
+                solicitante = get_object_or_404(Solicitante, user=request.user)
+                adocao.solicitante = solicitante
                 adocao.save()
                 return redirect("adocoes")
         except Exception as e:
@@ -49,10 +49,8 @@ def adocao_criar(request):
             )
     else:
         form = AdocaoForm()
-        # Se o método da requisição não for POST,
-        # exibe um formulário em branco para criar uma nova adoção
 
-    return render(request, "adocao_form.html", {"form": form})
+    return render(request, "form.html", {"form": form})
 
 
 @login_required
@@ -72,7 +70,7 @@ def adocao_atualizar(request, pk):
     else:
         form = AdocaoForm(instance=adocao)
 
-    return render(request, "adocao_form.html", {"form": form})
+    return render(request, "form.html", {"form": form})
 
 
 @login_required
@@ -83,9 +81,7 @@ def adocao_excluir(request, pk):
             adocao.delete()
             return redirect("adocoes")
         else:
-            return render(
-                request, "adocao_excluir_confirmacao.html", {"adocao": adocao}
-            )
+            return render(request, "excluir_confirm.html", {"adocao": adocao})
 
     except Exception as e:
         return HttpResponseServerError(f"Ocorreu um erro ao excluir a adoção: {str(e)}")
