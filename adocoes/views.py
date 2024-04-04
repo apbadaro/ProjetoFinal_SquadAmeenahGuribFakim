@@ -3,6 +3,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from django.http import Http404, HttpResponseServerError
 from django.shortcuts import render, redirect, get_object_or_404
+from .models import Animal
 
 @login_required  # Garante que apenas usuários autenticados tenham acesso
 def adocoes(request):
@@ -89,11 +90,3 @@ def adocao_excluir(request, pk):
     except Exception as e:
         return HttpResponseServerError(f"Ocorreu um erro ao excluir a adoção: {str(e)}")
 
-# ============================
-
-# Para Front:
-def home_inicio(request):
-    return render(request, 'index.html')
-
-def cadastro(request):
-    pass

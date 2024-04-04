@@ -1,0 +1,21 @@
+<!-- Nav Bar -> Extends do index.html -->
+{% extends 'index.html' %}
+
+{% block formularios %}
+    <!-- Conteúdo Formulário -->
+    <div class="background-verde">
+        <h1>Ficha Médica do Pet</h1>
+        <div class="formularios">
+            <h1>{{ animal.nome }}</h1>
+            <p>Sexo: {{ animal.sexo }}</p>
+            <p>Espécie: {{ animal.especie }}</p>
+            <p>Idade: {{ animal.idade }}</p>
+            <p>Raça: {{ animal.raca }}</p>
+            <p>Histórico de Saúde: {{ animal.historico_saude }}</p>
+            <!-- <img src="{{ animal.imagem.url }}" alt="Imagem do Animal"> -->
+            <img src="{{ animal.foto.url }}" alt="Imagem do Animal">
+        </div>
+    </div>
+{% endblock %}
+
+<!-- Footer -> Extends do index.html -->
