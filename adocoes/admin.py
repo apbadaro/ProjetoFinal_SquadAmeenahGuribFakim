@@ -7,7 +7,7 @@ class FuncionarioAdmin(admin.ModelAdmin):
     list_display = ["id", "nome", "cargo", "email", "get_telefone"]
     search_fields = ["nome", "cargo", "email"]
     list_filter = ["cargo"]
-    ordering = ["-id"]
+    ordering = ["id"]
 
 
 @admin.register(Animal)
@@ -18,14 +18,15 @@ class AnimalAdmin(admin.ModelAdmin):
         "especie",
         "idade",
         "sexo",
+        "castrado",
         "raca",
         "historico_saude",
         "data_entrada",
     ]
 
     search_fields = ["nome", "especie", "raca"]
-    list_filter = ["especie", "sexo", "data_entrada"]
-    ordering = ["-id"]
+    list_filter = ["especie", "sexo", "data_entrada", "castrado"]
+    ordering = ["id"]
     list_per_page = 15
 
 
@@ -34,7 +35,7 @@ class SolicitanteAdmin(admin.ModelAdmin):
     list_display = ["id", "nome", "get_cpf", "email", "telefone", "data_cadastro"]
     list_filter = ["nome", "data_cadastro"]
     search_fields = ["nome", "email"]
-    ordering = ["-id"]
+    ordering = ["id"]
     list_per_page = 15
 
 
@@ -49,5 +50,5 @@ class AdocaoAdmin(admin.ModelAdmin):
     ]
     list_filter = ["status", "data_solicitacao"]
     search_fields = ["solicitante.nome"]
-    ordering = ["-id"]
+    ordering = ["id"]
     list_per_page = 15

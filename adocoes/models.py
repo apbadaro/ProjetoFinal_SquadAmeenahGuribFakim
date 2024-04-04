@@ -32,7 +32,6 @@ class Animal(models.Model):
     class Meta:
         verbose_name = "Animal"
         verbose_name_plural = "Animais"
-        ordering = ["id"]
 
     def __str__(self):
         return f"{self.nome} - {self.especie} - {self.sexo}"
@@ -50,7 +49,6 @@ class Funcionario(models.Model):
     class Meta:
         verbose_name = "Funcionário"
         verbose_name_plural = "Funcionários"
-        ordering = ["id"]
 
     def get_telefone(self):
         return self._telefone
@@ -81,7 +79,6 @@ class Solicitante(models.Model):
     class Meta:
         verbose_name = "Solicitante"
         verbose_name_plural = "Solicitantes"
-        ordering = ["id"]
 
     def get_cpf(self):
         return self._cpf
