@@ -1,0 +1,17 @@
+<!-- Teste Base Extends -->
+
+<!-- formulario.html -->
+{% extends 'base.html' %}
+
+{% block title %}Página de Formulário teste{% endblock %}
+
+{% block content %}
+
+<div class="formulario">
+    <!-- Conteúdo do formulário aqui -->
+    <h3>Teste de Conteúdo Formulario</h3>
+</div>
+
+{% endblock %}
+
+<!-- Dessa forma, quando você renderizar a página formulario.html, ela irá herdar o layout do base.html, incluindo o navbar e o footer, e substituirá o conteúdo do bloco {% block content %} com o conteúdo específico do formulário. -->

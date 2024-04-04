@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta httm-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
-    <!-- =>pip install django-staticfiles -->
-    <!-- <link rel="stylesheet" href="/adocoes/static/css/style.css"> -->
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Pet Home</title>
 </head>
@@ -23,11 +20,15 @@
                     <!-- Lista -->
                     <ul class="ul">
                         <li> <a href="index.html">Home</a></li>
-                        <!-- href="{% static 'index.html' %}" -->
                         <li> <a href="adocao.html">Adotar</a></li>
                         <li> <a href="doacao.html">Doar</a></li>
                         <li> <a href="voluntariado.html"></a></li>
-                        <li> <a href="login.html"><button class="btn-gradiente">Login</button></a></li>
+                        <li> 
+                            <!-- ! erro -->
+                            <a href="/admin/">
+                                <button class="btn-gradiente">Login Adm</button>
+                            </a>
+                        </li>
                     </ul>
                     <!-- Menu Amburguer quando diminuir a tela -->
                     <div class="menu-icon">
@@ -89,7 +90,7 @@
     <section class="diferenciais">
         <div class="container">
             <div class="card">
-                <img src="../static/img/medal.png" alt="medal.png">
+                <img src="../static/img/emoji-smile.svg" alt="emoji">
                 <h3 class="titulo">Como fazer <em>doações</em> </h3>
                 <p>
                     <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
@@ -98,7 +99,7 @@
                 </p>
             </div>
             <div class="card">
-                <img src="../static/img/24h.png" alt="24h.png">
+                <img src="../static/img/emoji-heart-eyes.svg" alt="emoji">
                 <h3 class="titulo">Quero ser <em>voluntário</em></h3>
                 <p>
                     <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
@@ -106,7 +107,7 @@
                 </p>
             </div>
             <div class="card">
-                <img src="../static/img/caixa.png" alt="caixa.png">
+                <img src="../static/img/emoji-wink.svg" alt="emoji">
                 <h3 class="titulo">Por que ser um <em>cuidador</em></h3>
                 <p>
                     <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
@@ -129,7 +130,7 @@
                 <p>
                     A P&t Home, foi fundada em 2013, tendo sua primeira unidade no bairro da Lapa-SP, e hoje conta com mais duas unidades em São Paulo, a segunda em Pinheiros e a terceira na Penha. 
                 </p>
-                <img src="../static/img/" alt="pessoas e pets felizes">
+                <img src="../static/img/dog_cat.jpg" alt="dog e cat" class="img-dogcat">
                 <p>
                     <b>+felizes com a sua ajuda</b>
                 </p>
