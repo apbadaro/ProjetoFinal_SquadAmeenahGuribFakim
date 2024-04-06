@@ -15,3 +15,27 @@
 {% endblock %}
 
 <!-- Dessa forma, quando você renderizar a página formulario.html, ela irá herdar o layout do base.html, incluindo o navbar e o footer, e substituirá o conteúdo do bloco {% block content %} com o conteúdo específico do formulário. -->
+
+
+<!-- 
+{% extends "inicio.html" %}
+{% load bootstrap5 %}
+{% block principal %}
+
+  <h1 class="text-body-emphasis">Cadastro de usuários</h1>
+  <p>
+    Cadastre-se 
+  </p>
+  
+  {% if sucesso %}
+    <p class="alert alert-success"> Cadastro realizado com sucesso </p>
+  {% else %}
+    <form action="" method="POST" id="form" novalidate>
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    </form>
+  {% endif %}
+{% endblock %}
+
+ -->
