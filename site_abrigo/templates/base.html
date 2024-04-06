@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta httm-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
-    <!-- =>pip install django-staticfiles -->
-    <!-- <link rel="stylesheet" href="/adocoes/static/css/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/style.css">
     <!-- <title>Pet Home</title> -->
     <title>{% block title %}Título Padrão{% endblock %}</title>
@@ -25,12 +23,12 @@
                     <!-- Lista -->
                     <ul class="ul">
                         <li> <a href="index.html">Home</a></li>
-                        <!-- href="{% static 'index.html' %}" -->
                         <li> <a href="adocao.html">Adotar</a></li>
                         <li> <a href="doacao.html">Doar</a></li>
-                        <li> <a href="voluntariado.html"></a></li>
+                        <li> <a href="voluntariado.html">Voluntariado</a></li>
+                        <li> <a href="search_results.html">Buscar Pets</a></li>
                         <li> 
-                            <!-- ! erro -->
+                            <!-- ! Está levando para tela login do Admin do Django -->
                             <a href="/admin/">
                                 <button class="btn-gradiente">Login Adm</button>
                             </a>
@@ -92,7 +90,7 @@
                 <li><a href="sobre.html">FAQ</a></li>
                 <!-- <li><a href="#">Como Funciona</a></li> -->
                 <li><a href="agenda_eventos.html">Campanhas e Eventos</a></li>
-                <li><a href="agenda_eventos.html">Agenda de Enevtos</a></li>
+                <li><a href="agenda_eventos.html">Agenda de Eventos</a></li>
                 <li><a href="agenda_eventos.html">Comunicados</a></li>
             </ul>
             <!-- ul 04 -->
@@ -114,7 +112,8 @@
             <p> - All Rights Reserved - </p>
             <p> Termos legais & Política de Privacidade </p>
         </div>
-    </footer> 
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
     <script src="../static/js/script.js"></script>
 </body>
 </html>

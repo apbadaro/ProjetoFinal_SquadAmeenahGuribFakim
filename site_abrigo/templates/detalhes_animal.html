@@ -1,37 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Ficha Médica do Pet</title>
-    <!-- Detalhes do Animal -->
-    <!--! Colocar em um botão de acesso dentro do html do animal lista -->
-    <!-- <a href="{% url 'detalhes_animal' animal_id=1 %}">Detalhes do Animal 1</a> -->
-    <!-- Esse acima não funciona precisa ser detalhe do animal selcionado clicado? -->
-    <!--? <a href="{% url 'detalhes_animal' animal_id=animal.id %}">Detalhes</a> -->
-</head>
+<!-- Detalhes do Animal e Quero Adotar -->
+
+{% extends 'base.html' %}
+
+{% block title %}Página de Formulário teste{% endblock %}
+
+{% block content %}
+<!-- Tentei cria class formularios mas não funcionou -->
 <body>
-    <div class="background-verde">
-        <h1>Ficha Médica do Pet</h1>
+    <div class="container">
         <div class="formularios">
-            <h1>{{ animal.nome }}</h1>
-            <p>Sexo: {{ animal.sexo }}</p>
-            <p>Espécie: {{ animal.especie }}</p>
-            <p>Idade: {{ animal.idade }}</p>
+            <h1>Detalhes do Animal</h1>
+            <p>Nome: {{ animal.nome }}</p>
             <p>Raça: {{ animal.raca }}</p>
-            <p>Histórico de Saúde: {{ animal.historico_saude }}</p>
-            <!-- <img src="{{ animal.imagem.url }}" alt="Imagem do Animal"> -->
-            <img src="{{ animal.foto.url }}" alt="Imagem do Animal">
-        </div>
-        <!-- ficha_medica_pet.html -->
-        <br>
-        <div class="pagina-construcao">
+            <p>Sexo: {{ animal.sexo }}</p>
+            <p>Peso: {{ animal.peso }}</p>
+            <p>Idade: {{ animal.idade }}</p>
+            <p>Pelagem: {{ animal.pelagem }}</p>
+            <p>Castrado: {{ animal.castrado }}</p>
+            <p>Detalhes Médicos: {{ animal.detalhes_medicos }}</p>
+            <!-- Adicione os outros campos aqui -->
+            <img src="{{ animal.foto.url }}" alt="Foto do Animal">
+            
+            <h2>Solicitar Adoção</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar Solicitação</button>
+            </form>
             <br>
-            <h3>Página em Construção</h3>
-            <br>
-            <a href="index.html"><button class="btn-gradiente">Voltar</button></a>
         </div>
     </div>
 </body>
-</html>
+
+{% endblock %}

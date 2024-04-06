@@ -73,6 +73,18 @@ a.pop-up:hover {
     /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
     margin: 0 auto;
 }
+/* Não está funcionando: */
+.formularios {
+    /* Largura Máxima da tela: */
+    max-width: 1440px;
+    /* Espaçamento interno Topo e Inferior de 0 e Direita e Esquerda de 5%: */
+    padding: 0 10%;
+    /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
+    margin: 0 auto;
+
+    text-align: center;
+}
+
 section,
 footer {
     padding: 2.5rem 0;
