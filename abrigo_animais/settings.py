@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "adocoes",
     "pagina_inicial",
-    "cadastro_voluntarios",
     "bootstrap5"
 ]
 
