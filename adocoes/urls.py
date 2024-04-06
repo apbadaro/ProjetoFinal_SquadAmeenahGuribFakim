@@ -23,3 +23,4 @@ urlpatterns = [
         login_required(views.adocao_excluir),
         name="adocao_excluir",
     ),
+]
