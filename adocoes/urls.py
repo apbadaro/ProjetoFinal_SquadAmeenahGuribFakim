@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
+from django.contrib import admin
+from django.urls import path
+from adocoes.views import home_inicio
 
 urlpatterns = [
     path("", login_required(views.adocoes), name="adocoes"),
@@ -20,4 +23,3 @@ urlpatterns = [
         login_required(views.adocao_excluir),
         name="adocao_excluir",
     ),
-]
