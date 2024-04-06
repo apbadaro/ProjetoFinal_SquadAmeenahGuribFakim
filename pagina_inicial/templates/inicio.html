@@ -12,18 +12,39 @@
 </head>
 <body>
 <!-- Retirei o Nav Menu e coloquei a parte no nav.html -->
-
-    <main class="container">
+    <div>
+        <form action="{% url 'search_animals' %}" method="GET">
+            <input type="text" name="q" placeholder="Search animals...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+        
+    <div>
         <h1>Pets para Adoção</h1>
-
-        
-        
-        <div class="pagina-construcao">
-            <br>
-            <h3>Página em Construção</h3>
-            <br>
-            <a href="index.html"><button class="btn-gradiente">Voltar</button></a>
-        </div>
+        <table class=>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>Idade</th>
+                <th>Foto</th>
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+            </thead>
+            <tbody>
+            {% for animal in animals %}
+            <tr>
+                <td>{{ animal.nome }}</td>
+                <td>{{ animal.sexo }}</td>
+                <td>{{ animal.idade }}</td>
+                <td>{{ animal.foto }}</td>
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="index.html"><button class="btn-gradiente">Voltar</button></a>
+    </div>
     </main>
     <!-- <script src="link para Bootstrap js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
