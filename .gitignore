@@ -1,11 +1,11 @@
 .DS_Store
 .vscode
+
 __pycache__/
+barra_de_pesquisa/
+static/
+templates/
 venv/
+delete.py
 notes.md
-site-packages
-Scripts
-pyvenv.cfg
-.venv/
-anotacoes_diversas_MM
 

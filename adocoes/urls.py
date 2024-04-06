@@ -7,13 +7,19 @@ from adocoes.views import home_inicio
 
 urlpatterns = [
     path("", login_required(views.adocoes), name="adocoes"),
-    #! Não seria "" para a página principal? Temos como mudar esse para "adocao"?
-    path("adocao/criar/",login_required(views.adocao_criar), name="adocao_criar"),
-    path("adocao/detalhes/<int:pk>/", login_required(views.adocao_detalhes), name="adocao_detalhes"),
-    path("adocao/atualizar/<int:pk>/", login_required(views.adocao_atualizar), name="adocao_atualizar"),
-    path("adocao/excluir/<int:pk>/", login_required(views.adocao_excluir), name="adocao_excluir"),
-# Front End:
-    path('home_inicio/', views.home_inicio, name='home_inicio'),
-]
-
-
+    path("adocao/criar/", login_required(views.adocao_criar), name="adocao_criar"),
+    path(
+        "adocao/detalhes/<int:pk>/",
+        login_required(views.adocao_detalhes),
+        name="adocao_detalhes",
+    ),
+    path(
+        "adocao/atualizar/<int:pk>/",
+        login_required(views.adocao_atualizar),
+        name="adocao_atualizar",
+    ),
+    path(
+        "adocao/excluir/<int:pk>/",
+        login_required(views.adocao_excluir),
+        name="adocao_excluir",
+    ),
