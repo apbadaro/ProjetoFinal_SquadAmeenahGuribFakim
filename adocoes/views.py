@@ -94,6 +94,3 @@ def adocao_excluir(request, pk):
 # Para Front:
 def home_inicio(request):
     return render(request, 'index.html')
-
-def cadastro(request):
-    pass
