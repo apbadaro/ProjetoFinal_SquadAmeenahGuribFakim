@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoções - Listagem Completa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f9e8;
+        }
+
+        .adoptions-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .adoptions-title {
+            color: #228b22;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .adoption-item {
+            background-color: #def6e9;
+            border: 1px solid #4caf50;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .adoption-details {
+            margin-bottom: 10px;
+        }
+
+        .actions {
+            text-align: right;
+        }
+
+        .btn-add {
+            background-color: #4caf50;
+            border-color: #4caf50;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .btn-add:hover {
+            background-color: #388e3c;
+            border-color: #388e3c;
+        }
+
+        .btn-view {
+            background-color: #4caf50;
+            border-color: #4caf50;
+            color: #ffffff;
+            margin-right: 5px;
+        }
+
+        .btn-view:hover {
+            background-color: #388e3c;
+            border-color: #388e3c;
+        }
+
+        .btn-primary {
+            background-color: #4caf50;
+            border-color: #4caf50;
+            color: #ffffff;
+            margin-right: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #388e3c;
+            border-color: #388e3c;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: #ffffff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            background-color: #4caf50;
+            border-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #back-to-top:hover {
+            background-color: #388e3c;
+            border-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container adoptions-container">
+        <h1 class="adoptions-title">Adoções - Listagem Completa</h1>
+        <a href="{% url 'adocao_criar' %}" class="btn btn-add">Criar Nova Adoção</a>
+        {% if adocoes %}
+            {% for adocao in adocoes %}
+                <div class="adoption-item">
+                    <div class="adoption-details">
+                        <p><strong>Solicitante:</strong> {{ adocao.solicitante.nome }}</p>
+                        <p><strong>Animal:</strong> {{ adocao.animal.nome }}</p>
+                        <p><strong>Status:</strong> {{ adocao.status }}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'adocao_detalhes' adocao.pk %}" class="btn btn-view">Detalhes</a>
+                        <a href="{% url 'adocao_atualizar' adocao.pk %}" class="btn btn-primary">Atualizar</a>
+                        <a href="{% url 'adocao_excluir' adocao.pk %}" class="btn btn-danger">Apagar</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Não há adoções cadastradas.</p>
+        {% endif %}
+    </div>
+
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.onscroll = function() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>

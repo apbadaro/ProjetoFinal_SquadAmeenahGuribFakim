@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Adoção</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f9e8;
+        }
+
+        .form-container {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-group label {
+            color: #228b22;
+        }
+
+        .dropdown-toggle {
+            background-color: #d3e0c4;
+            color: #228b22;
+            border: 1px solid #228b22;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-toggle:focus {
+            background-color: #d3e0c4;
+            color: #228b22;
+            border: 1px solid #228b22;
+        }
+
+        .dropdown-item {
+            color: #228b22;
+        }
+
+        .dropdown-item:hover {
+            background-color: #c1d1a3;
+            color: #ffffff;
+        }
+
+        .dropdown-menu {
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: #228b22;
+            border-color: #228b22;
+        }
+
+        .btn-primary:hover {
+            background-color: #006400;
+            border-color: #006400;
+        }
+
+        .btn-back {
+            background-color: #228b22;
+            border-color: #228b22;
+            color: #ffffff;
+        }
+
+        .btn-back:hover {
+            background-color: #006400;
+            border-color: #006400;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <div>
+            <h1 style="color: #228b22;">Formulário de Adoção</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_solicitante">Solicitante:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSolicitante" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ form.solicitante.value }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownSolicitante">
+                            {% for choice in form.solicitante.field.choices %}
+                                <li><a class="dropdown-item" href="#" onclick="updateDropdownValue('id_solicitante', '{{ choice.0 }}', '{{ choice.1 }}'); return false;">{{ choice.1 }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <input type="hidden" name="solicitante" id="id_solicitante" value="{{ form.solicitante.value }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_animal">Animal:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAnimal" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ form.animal.value }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAnimal">
+                            {% for choice in form.animal.field.choices %}
+                                <li><a class="dropdown-item" href="#" onclick="updateDropdownValue('id_animal', '{{ choice.0 }}', '{{ choice.1 }}'); return false;">{{ choice.1 }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <input type="hidden" name="animal" id="id_animal" value="{{ form.animal.value }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_status">Status da Adoção:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownStatus" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ form.status.value }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownStatus">
+                            {% for choice in form.status.field.choices %}
+                                <li><a class="dropdown-item" href="#" onclick="updateDropdownValue('id_status', '{{ choice.0 }}', '{{ choice.1 }}'); return false;">{{ choice.1 }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <input type="hidden" name="status" id="id_status" value="{{ form.status.value }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <div class="text-center mt-4">
+                <a href="{% url 'adocoes' %}" class="btn btn-back">Voltar</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateDropdownValue(inputId, value, text) {
+            document.getElementById(inputId).value = value;
+            document.getElementById(inputId).previousElementSibling.innerHTML = text;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
