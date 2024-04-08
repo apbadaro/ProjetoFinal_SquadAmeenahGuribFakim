@@ -3,51 +3,69 @@ _Responsável: [Ana Paula Badaró](https://github.com/quasiEvil)_
 
 Sistema de gerenciamento de adoções de animais: os usuários podem solicitar a adoção de um animal, e os responsáveis pelo abrigo podem aprovar ou recusar as solicitações.
 
-## Estrutura do repositório
-O projeto encontra-se dividido em duas partes:
-1. Abrigo de Animais (`abrigo_animais`): Projeto principal.
-2. Adoções (`adocoes`): App para gerenciar as adoções.
-
-### 1. Abrigo de Animais (`abrigo_animais`)
-Contém as configurações do projeto e a configuração do banco de dados.
-
-**Configurações**
-- `settings.py`: Configurações do projeto, incluindo `LOGIN_URL` e `MEDIA_URL`.
-- `urls.py`: URLs do projeto, incluindo o prefixo para o aplicativo `adocoes`.
-
-### 2. Adoções (`adocoes`)
-Sistema de gerenciamento das adoções.
+### 1. Aplicativo de adoções (`adocoes`)
+Sistema de gerenciamento das adoções do abrigo.
 
 **Modelos**
 - `models.py`: Modelos de dados para as adoções, animais, solicitantes e funcionários.
 
-**Formulários**
-- `forms.py`: Formulários para as adoções.
+**Formulário**
+- `form.py`: Formulário para as adoções.
 
 **Views**
-- `views.py`: Visualizações para gerenciar adoções, incluindo lista completa, detalhes, criação, atualização e exclusão.
+- `views.py`: Visualizações para gerenciar adoções, incluindo a listagem completa, detalhes, criação, atualização e exclusão.
 
 **URLs**
 - `urls.py`: URLs do app `adocoes`.
 
 **Templates**
-- `templates/adocoes/adocoes.html`: Exibe todas as adoções registradas.
-- `templates/adocoes/adocao_form.html`: Formulário para criar e atualizar adoções.
-- `templates/adocoes/adocao_detalhes.html`: Detalhes de uma adoção específica.
-- `templates/adocoes/adocao_excluir_confirmacao.html`: Página de confirmação de exclusão de uma adoção.
+- `templates/adocoes.html`: Exibe todas as adoções registradas.
+- `templates/form.html`: Formulário para criar e atualizar adoções.
+- `templates/detalhes.html`: Detalhes de uma adoção específica.
+- `templates/excluir_confirm.html`: Página de confirmação de exclusão de uma adoção.
 
 ## Funcionalidades
-- **Cadastro de usuários:** Os usuários podem se cadastrar no sistema como solicitantes.
-- **Solicitação de adoção:** Os solicitantes podem solicitar a adoção de um animal disponível.
-- **Gerenciamento de adoções:** Os responsáveis pelo abrigo podem visualizar e gerenciar as solicitações de adoção pendentes.
-- **Aprovação/Recusa de adoções:** Os responsáveis pelo abrigo podem aprovar ou recusar as solicitações de adoção.
+- **Cadastro de solicitantes, animais e funcionários:** Registra novos dados de solicitantes, animais e funcionários na área do administrador com permissão de superusuário.
+- **Gerenciamento de adoções:** Administração e visualização das solicitações de adoção.
+- **Aprovação/Recusa de adoções:** Possibilidade de aceitar ou recusar as solicitações de adoção.
 
-## Tecnologias Utilizadas
+## Acessando a área do `admin`
+1. Acesse o seguinte endereço em um navegador:
+``` bash
+http://127.0.0.1:8000/admin
+
+ou
+
+http://localhost:8000/admin
+```
+
+2. Faça o login com alguma das credenciais abaixo:
+``` bash
+Clarice, Gerente (superuser)
+Usuário: clarice
+Senha: senha123
+```
+
+``` bash
+Danilo, Voluntário
+Usuário: danilo
+Senha: senha123
+```
+``` bash
+Matilde, Voluntária
+Usuário: matilde
+Senha: senha123
+```
+
+## Tecnologias utilizadas
+- Bootstrap 5
 - Django
+- Jinja 2
+- Pillow
 - Python
 - SQLite
 
-## Como utilizar
+## Como utilizar o aplicativo
 1. Clone o repositório
 ``` bash
 git clone https://github.com/quasiEvil/projeto-final-womakerscode.git
@@ -88,7 +106,7 @@ python manage.py runserver
 ```
 
 7. Acesse o seguinte endereço em um navegador:
-```
+``` bash
 http://127.0.0.1:8000/admin
 
 ou
@@ -107,8 +125,9 @@ http://localhost:8000/admin
 - [Django: The Django Admin Site](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/)
 - [Django: Creating an admin user](https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
 - [Django: Registration](https://www.pythontutorial.net/django-tutorial/django-registration/)
-- [Django: File Uploads](https://docs.djangoproject.com/en/3.1/topics/http/file-uploads/)
+- [Django: File and Image Uploads](https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial)
 - [Django: verbose_name](https://www.geeksforgeeks.org/verbose_name-django-built-in-field-validation/)
 - [Django: on_delete](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.ForeignKey.on_delete)
 - [Django: Retrieving Objects](https://docs.djangoproject.com/en/5.0/topics/db/queries/#retrieving-objects)
 - [Django: How to Change "app name"](https://stackoverflow.com/questions/26972625/how-to-change-app-name-in-django-admin)
+- [Django: CSRF Protection](https://docs.djangoproject.com/en/5.0/ref/csrf/)

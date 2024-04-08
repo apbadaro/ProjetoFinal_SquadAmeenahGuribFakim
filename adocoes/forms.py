@@ -12,7 +12,7 @@ class AdocaoForm(forms.ModelForm):
             "status": "Status da Adoção:",
         }
         widgets = {
-            "solicitante": forms.TextInput(attrs={"class": "form-control"}),
+            "solicitante": forms.Select(attrs={"class": "form-control"}),
             "animal": forms.Select(attrs={"class": "form-control"}),
             "status": forms.Select(attrs={"class": "form-control"}),
         }
