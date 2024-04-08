@@ -1,0 +1,35 @@
+<!-- detalhes_pet.html -->
+{% extends 'base.html' %}
+
+{% block title %}Página de Formulário Detalhes Pet e Solicitação de Adoção{% endblock %}
+
+{% block content %}
+    <body>
+        <div class="container">
+            <div class="formularios">
+                <!-- Conteúdo do formulário aqui -->
+                <h1>Mais Detalhes do Pet</h1>
+                <img src="{{ animal.foto.url }}" alt="Foto do Animal">
+                <h2>{{ animal.nome }}</h2>
+                <p>Espécie: {{ animal.especie }}</p>
+                <p>Raça: {{ animal.raca }}</p>
+                <p>Sexo: {{ animal.sexo }}</p>
+                <p>Idade: {{ animal.idade }}</p>
+                <p>Castrado: {{ animal.castrado }}</p>
+                <p>Data Entrada: {{ animal.data_entrada }}</p>
+                <p>Histórico de Saúde: {{ animal.historico_saude }}</p>
+                
+                <h2>Solicitar Adoção deste Pet</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Enviar</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}
+
+

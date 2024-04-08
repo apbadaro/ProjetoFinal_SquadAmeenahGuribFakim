@@ -1,0 +1,560 @@
+/*? Fontes */
+/* https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ======================================================== */
+
+/*? Reset do Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Chamar a família da fonte: */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/* Pseudo Classe Root criar variaveis com --xxxxx */
+/*? Variaveis das Cores - Tipo Catálogo */
+/* ============================================================================= */
+/*? Catálogo 04 - TONS VERDE*/
+:root{
+    /* Cores Padrões Auxiliares: */
+    --black: #000000;
+    --black-translucent: #00000098;
+    --white: #ffffff;
+    --off-white: #f5f5f5;
+    --gray:#868585;
+    --light-gray:#a1a1a1;
+
+    /* Paleta Escolhida - em pares */
+    --muito-escuro: #3D9776;
+    --escuro:#79A97D;
+    --mediano:#A9BB8F;
+    --claro:#D1CEA9;
+    --muito-claro:#F1E2CA;
+    
+    /* Paleta de possibilidades de Constraste: */    
+    --contraste-01:#333233;
+    --contraste-02:#006344;
+    --contraste-03:#8A6E37;
+
+    /* Degradê da Paleta Escolhida: */
+    --degrade-btn: linear-gradient(#F1E2CA, #3D9776);
+    --degrade-para-direita: linear-gradient(to right, #3D9776, #79A97D, #A9BB8F, #D1CEA9, #F1E2CA);
+    --degrade-claro-centro: linear-gradient(to right, #79A97D, #A9BB8F, #D1CEA9, #F1E2CA, #D1CEA9, #A9BB8F, #79A97D);
+    --degrade-escuro-centro: linear-gradient(to right, #F1E2CA, #D1CEA9, #A9BB8F, #79A97D, #3D9776, #79A97D, #A9BB8F, #D1CEA9, #F1E2CA);
+}
+/* ============================================================================= */
+
+/* Para usar as variaveis acima: */
+.background-verde {
+    background: var(--degrade-claro-centro);
+}
+
+/*? Classes Reutilizável em vários contextos: */
+
+/*! Rever isso */
+a:hover,
+a.pop-up:hover {
+    color: #ddbd85;
+    background-color: transparent;
+    /* text-decoration: underline; */
+}
+
+.container {
+    /* Largura Máxima da tela: */
+    max-width: 1440px;
+    /* Espaçamento interno Topo e Inferior de 0 e Direita e Esquerda de 5%: */
+    padding: 0 5%;
+    /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
+    margin: 0 auto;
+}
+/* Não está funcionando: */
+.formularios {
+    /* Largura Máxima da tela: */
+    max-width: 1440px;
+    /* Espaçamento interno Topo e Inferior de 0 e Direita e Esquerda de 5%: */
+    padding: 0 10%;
+    /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+section,
+footer {
+    padding: 2.5rem 0;
+}
+.btn-gradiente {
+    padding: 10px 25px;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    background-image: var(--degrade-btn);
+    border-radius: 5px;
+}
+button {
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+/*? Classes do site: */
+nav {
+    /* As div vao ficar uma ao lado da outra: */
+    display: flex;
+    /* Vai espalhar a logo da lu - espaço entre eles: */
+    justify-content: space-between;
+    /* coloca no meio de cima pra baixo (horizontalmente) */
+    align-items: center;
+    /* Espaçamento das palavras pra cima e pra baixo: */
+    padding: 15px 0;
+}
+.logo a {
+    font-size: 35px;
+    font-weight: bold;
+    /* color: var(--muito-escuro); */
+    color: var(--contraste-02);
+}
+.logo:hover{
+    transform: scale(1.3);
+    transition-duration: 0.3s;
+}
+.ul {
+    display: flex;
+    align-items: center;
+}
+.ul:hover{
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
+.ul li{
+    margin: 0 35px;
+    font-size: 15px;
+}
+.ul li a{
+    /* color: var(--white); */
+    color: var(--contraste-02);
+}
+
+/*? main: principal */
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.main-text {
+    width: 50%;
+    color: var(--white);
+}
+.main-text h1 {
+    /* font-size: 4.5rem; */
+    font-size: 3.5rem;
+}
+.main-text div {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.main-img {
+    width: 40%;
+}
+.main-img img {
+    width: 100%;
+    max-height: 30%;
+    border-radius: 15px 0px 25px 0px;
+    padding-bottom: 10px;
+    /* max-height: 500px; */
+}
+
+/*? Menu Icon */
+.menu-icon {
+    /* faz o menu desaparecer */
+    display: none;
+    /* Posicionar aparição do menu */
+    position: relative;
+    z-index: 10;
+}
+
+/*? Section 2: Resultados */
+/*! Parte para informar Resultados do Último Ano */
+.resultados {
+    background: var(--muito-escuro);
+}
+.resultados .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resultados .resultados-text {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 50%;
+}
+.resultados .resultados-numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+.resultados .resultados-numero p {
+    text-align: center;
+    margin: 0 20px;
+    font-size: 20px;
+}
+.resultados .container .resultados-numero p span {
+font-size: 20px;
+font-weight: 600;
+}
+
+/*? TERCEIRA PARTE - Section Diferenciais*/
+/*! Pode ser parte para Falar sobre Adoção/Voluntariado/Doação */
+.diferenciais .container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+}
+.diferenciais .card {
+    width: 30%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.diferenciais .card:hover {
+    box-shadow: 0px 10px 67px 8px var(--light-gray);
+}
+.diferenciais .card img {
+    width: 60px;
+}
+.diferenciais .card .titulo {
+    margin: 13px 0;
+    font-weight: 600;
+}
+.img-dogcat {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+/*? QUARTA PARTE: Section Home */
+/* Conheça nossas Instalações: */
+.casa .container {
+    display: flex;
+    align-items: center;
+    background-color: var(--muito-claro);
+}
+.casa .casa-img {
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.casa .casa-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+.casa .casa-text {
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 90px;
+}
+.casa .casa-text h2 {
+    font-size: 2.5em;
+}
+.casa .casa-text p {
+    margin: 20px 0;
+    color: var(--escuro);
+}
+.casa .casa-text p b {
+    color: var(--black);
+    font-size: 25px;
+}
+
+/* ? Melhores-Lugares */
+/* Nossas Unidades */
+.melhores-lugares .verde-escuro {
+    font-size: 24px;
+    font-weight: 600;
+    /* era class azul, mudei */
+    color: var(--muito-escuro);
+}
+.melhores-lugares h2 {
+    font-size: 2.5rem;
+}
+.melhores-lugares .cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.melhores-lugares .cards .card-item {
+    width: 30%;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 20px;
+    box-shadow: 0px 35px 97px -15px var(--muito-claro);
+}
+.melhores-lugares .cards img {
+    width: 120px;
+    border-radius: 5px;
+}
+.melhores-lugares .cards .local-casa {
+    margin: 5px 0;
+    color: var(--gray);
+}
+.melhores-lugares .cards .nome-casa {
+    font-size: 30px;
+    font-weight: 500;
+}
+.melhores-lugares .cards .contato {
+    margin-bottom: 20px;
+    color: var(--gray)
+}
+.melhores-lugares .cards button {
+    padding: 10px 20px;
+    color: var(--white);
+    background-image: var(--degrade-escuro-centro);
+    border-radius: 3px;
+}
+.melhores-lugares .cards button:hover {
+    box-shadow: 0px 10px 40px 8px var(--light-gray);
+}
+
+/*? Newsletter */
+.newsletter {
+    margin-top: 50px;
+    background-color: var(--claro);
+}
+.newsletter .box-newsletter {
+    text-align: center;
+    /* Conatruir uma Imagem de Back no Canva */
+    background-image: url('../img/background-newslatter.png');
+    background-repeat: no-repeat;
+    /* Para imagem pegar todo espaço disponível: */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+.newsletter .box-newsletter h2 {
+    font-size: 2.5rem;
+}
+.newsletter .box-newsletter p {
+    margin: 13px 0;
+}
+.newsletter .box-newsletter input {
+    width: 35%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    /* Para não ter linha ao passar mouse */
+    outline: none;
+    color: var(--black-translucido);
+    background-color: var(--muito-claro);
+}
+.newsletter .box-newsletter button {
+    font-size: 15px;
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--muito-escuro);
+    /* background-color: var(--muito-escuro); */
+    background-image: var(--degrade-claro-centro);
+}
+
+/*? Footer */
+footer {
+    background-color: var(--muito-escuro);
+}
+footer .container {
+    display: flex;
+    color: var(--white)
+}
+footer .container ul {
+    width: 25%;
+}
+footer .container h4 {
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--claro);
+    margin-left: 20px;
+}
+footer .container .redes-sociais {
+    text-align: center;
+}
+footer .container .redes-sociais img {
+    margin-right: 20px;
+    /* espaço */
+    justify-content: space-between;
+}
+footer .container ul > p {
+    margin-bottom: 40px;
+    /* rever */
+    margin-right: 10px;
+}
+footer .container ul .footer-listas:hover {
+ color: var(--mediano);
+}
+footer .container li {
+    font-size: 12px;
+    margin: 10px 0;
+    /* rever */
+    margin-left: 20px;
+}
+footer .container a {
+    color: var(--white);
+}
+.minha-assinatura {
+    padding-top: 40px;
+}
+.minha-assinatura p {
+    font-size: small;
+    color: var(--muito-claro);
+    text-align: center;
+    text-shadow: 1px 1px 2px var(--light-gray);
+}
+
+
+/*? RESPONSIVO: Media Query */
+@media (max-width: 960px){
+    /* Menu Icon */
+    .menu-icon {
+        /* faz o menu aparecer */
+        display: block;
+    }
+    .ul {
+        /* Modifica a ul */
+        position: fixed;
+        background: var(--escuro);
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transition: 0.3s;
+        /* Pôr menu um embaixo do outro */
+        flex-direction: column;
+        /* centralizado ao centro */
+        justify-content: center;
+    }
+    .ul li {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    .ul.ativo {
+        /* Conforme codigo JS, se ativo, mostra a ul */
+        left: 0;
+    }
+    /* Para alinhar a Img e o Tex um sob o outro */
+    main .container {
+        flex-direction: column;
+    }
+    /* Agora o Texto e a Img precisam ocupar 100% ao invés de 50% */
+    main .container .main-img,
+    main .container .main-text {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    main .container .main-text h1 {
+        font-size: 3rem;
+    }
+    main .container .main-text div {
+        justify-content: center;
+        /* padding-top: 10px; */
+        padding-bottom: 20px;
+    }
+    .resultados .container {
+        flex-direction: column;
+    }
+    .resultados .resultados-text,
+    .resultados .resultados-numero {
+        width: 100%;
+        text-align: center;
+    }
+    .resultados-numero {
+        margin-top: 30px;
+    }
+    /* DIFERENCIAIS */
+    .diferenciais .container{
+        flex-direction: column;
+    }
+    .diferenciais .card{
+        width: 100%;
+    }
+    /* Home */
+    .casa .container {
+        flex-direction: column-reverse;
+    }
+    .casa .casa-text,
+    .casa .casa-img {
+        width: 100%;
+        text-align: center;
+        /* zerei o distanciamento da tela cheia */
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+    /* MELHORES LUGARES */
+    .melhores-lugares .cards {
+        flex-direction: column; 
+    }
+    .melhores-lugares .cards .card-item {
+        width: 100%;
+        margin-top: 50px;
+    }
+    /* NEWSLETTER */
+    .newsletter .box-newsletter {
+        padding: 50px;
+    }
+    .newsletter .box-newsletter h2 {
+        font-size: 2.0rem;
+    }
+    .newsletter .box-newsletter input {
+        width: 90%;
+        /* ele vai empurrar o botão para baixo */
+    }
+    .newsletter .box-newsletter button {
+        width: 50%;
+        margin-top: 20px;
+        /* Para se distanciar do input quando descer de linha */
+    }
+    /* FOOTER */
+    footer .container {
+        flex-direction: column;
+    }
+    footer .container ul {
+        width: 100%;
+        margin-bottom: 30px;
+        /* eu preferi ao centro */
+        text-align: center;
+    }
+}
+
+/* Diminuir a tela ao máximo para verificar onde começa a quebrar o código para pegar esse número como limitador: */
+@media (max-width: 440px) {
+    .resultados .resultados-numero{
+        flex-direction: column;
+    }
+    main .container .main-text h1 {
+        font-size: 3rem;
+    }
+    .resultados .container .resultados-numero p span {
+        font-size: 15px;
+        font-weight: 300;
+        }
+}
+
+
+
+/* Teste de Tamanho */
+/* @media (max-width: 960px){
+    nav{
+        background-color: red;
+    }
+} */
