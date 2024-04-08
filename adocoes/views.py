@@ -89,4 +89,6 @@ def adocao_excluir(request, pk):
 
     except Exception as e:
         return HttpResponseServerError(f"Ocorreu um erro ao excluir a adoção: {str(e)}")
+    
+
 

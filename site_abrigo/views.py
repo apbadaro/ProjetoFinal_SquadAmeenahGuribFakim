@@ -88,3 +88,8 @@ def sucesso(request):
 
 
 '''
+
+def animais_disponiveis(request):
+    bichinho = Animal.objects.all()
+    contexto = contexto = {'bichinho': bichinho,}
+    return render(request, 'animais_disponiveis.html', contexto)
