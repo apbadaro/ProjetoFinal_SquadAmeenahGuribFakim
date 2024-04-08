@@ -20,6 +20,7 @@
             <td>{{ animal.sexo }}</td>
             <td>{{ animal.idade }}</td>
             <td>{{ animal.foto }}</td>
+            <a href="{% url 'detalhe_pedido' animal.id %}" class="btn btn-primary">Detalhes</a>
             <!-- Adicione outras colunas conforme necessário -->
         </tr>
         {% endfor %}

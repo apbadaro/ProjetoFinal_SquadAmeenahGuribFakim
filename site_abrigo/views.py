@@ -9,6 +9,7 @@ def site(request):
     return render(request, 'index.html')
 
 def animais_disponiveis(request):
+   # bichinho = Animal.objects.all()
     bichinho = Animal.objects.all()
     contexto = contexto = {'bichinho': bichinho,}
-    return render(request, 'animais_disponiveis.html', contexto)
+    return render(request, 'animais_disponiveis.html', contexto )
