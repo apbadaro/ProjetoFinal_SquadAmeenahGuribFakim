@@ -6,6 +6,7 @@
 
 {% block content %}
 <!-- Tentei cria class formularios mas não funcionou -->
+<!-- FOR -->
 <body>
     <div class="container">
         <div class="formularios">
@@ -17,8 +18,7 @@
             <p>Idade: {{ animal.idade }}</p>
             <p>Pelagem: {{ animal.pelagem }}</p>
             <p>Castrado: {{ animal.castrado }}</p>
-            <p>Detalhes Médicos: {{ animal.detalhes_medicos }}</p>
-            <!-- Adicione os outros campos aqui -->
+            <p>Histórico de Saude: {{ animal.detalhes_medicos }}</p>
             <img src="{{ animal.foto.url }}" alt="Foto do Animal">
             
             <h2>Solicitar Adoção</h2>

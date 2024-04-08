@@ -9,9 +9,18 @@ class Animal(models.Model):
     peso = models.DecimalField(max_digits=5, decimal_places=2)
     idade = models.IntegerField()
     castrado = models.BooleanField(default=False)
-    # historico_saude
-    # data de entrada
+    data_entrada = models.DateTimeField(
+        null=True, db_column="Data de Entrada", verbose_name="Data de Entrada"
+    )
     # especie ou porte?
-    detalhes_medicos = models.TextField()
+    historico_saude = models.TextField()
     pelagem = models.CharField(max_length=10, choices=[('curto', 'Curto'), ('medio', 'Medio'), ('longo', 'Longo')])
     foto = models.ImageField(upload_to='pets', blank=True, null=True)
+
+#! erro 
+    # class Meta:
+    #     db_tabela = 'adocoes_animal'
+
+    class Meta:
+        verbose_name = "Animal"
+        verbose_name_plural = "Animais"

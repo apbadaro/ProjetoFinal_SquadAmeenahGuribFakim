@@ -1,0 +1,54 @@
+<!-- Lista de Animais Disponíveis -->
+
+{% extends 'base.html' %}
+
+{% block title %}Página de Formulário teste{% endblock %}
+
+{% block content %}
+<!-- Tentei cria class formularios mas não funcionou -->
+<!-- FOR -->
+<body>
+    <div class="container">
+        <div class="formularios">
+
+            <!-- Colar seu Código Aqui e Testar -->
+            <!-- Está dando poucos conflitos devido ao Bootstrap mas depois vejo no Base.html -->
+            <section class="animais-disponiveis">      
+                <h2>Cachorros ou gatos disponíveis para fazer parte de uma família. </h2>
+                <br>  
+                <p>Confira nossos animais disponíveis:</p>         
+                <br>
+                <div>
+                  <table>
+                    <thead>
+                       <tr>
+                        <th>Nome</th>
+                       <th>Espécie</th>
+                        <th>Sexo</th>
+                        <th>Idade</th>
+                        <th>Raça</th>
+                        <th>Foto</th>
+                       <!-- Adicione outras colunas conforme necessário -->
+                     </tr>
+                    </thead>
+                    <tbody>
+                     {% for animal in animals %}
+                     <tr>
+                        <td>{{ animal.nome }}</td>
+                        <td>{{ animal.especie }}</td>
+                       <td>{{ animal.sexo }}</td>
+                       <td>{{ animal.idade }}</td>
+                       <td>{{ animal.raca }}</td>
+                       <td>{{ animal.foto }}</td>
+                       <!-- Adicione outras colunas conforme necessário -->
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
