@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% block title %}Página de animais disponíveis{% endblock %} 
+{% block content %}
+<body>
+    <div class="container">
+        < class="formularios">
+        <h1>Pets para Adoção</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>Idade</th>
+                    <th>Foto</th>
+                    <th>+Detalhes</th> <!-- Adicionando uma nova coluna para o botão/link -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for animal in bichinho %}
+                <tr>
+                    <td>{{ animal.nome }}</td>
+                    <td>{{ animal.sexo }}</td>
+                    <td>{{ animal.idade }}</td>
+                    <td>{{ animal.foto }}</td>
+                    <td>
+                        <!-- Adicione um link ou botão para a página de detalhes do animal -->
+                        <a href="{% url 'detalhe_pedido' animal.id %}" class="btn btn-primary">Detalhes</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="index.html"><button class="btn-gradiente">Voltar</button></a>
+        <br>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -2,7 +2,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from site_abrigo.views import site, detalheAdotar, detalhes_animal, sucesso, animais_disponiveis
+from site_abrigo.views import site, animais_disponiveis
+from detalhe_pedido.views import detalhe_pedido, sucesso, teste_disponiveis
+from detalhe_pedido import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -13,18 +15,17 @@ urlpatterns = [
 
     path("adocoes/", include("adocoes.urls"), name="adocoes"),
 
-    #? def views base_form_detalhe_adocao:
-    path("detalhe_adotar/", detalheAdotar),
-    # http://127.0.0.1:8000/detalhe_adotar/
+    path('animais_disponiveis/', animais_disponiveis),
 
-    #? rever
-    path('animal/<int:animal_id>/', detalhes_animal, name='detalhes_animal'),
-    # http://127.0.0.1:8000/animal/1/
+    #! Teste MM Botão Lista de Animais:
+    path('teste_disponiveis/', teste_disponiveis),
+
+    path('detalhe_pedido/<int:animal_id>/', views.detalhe_pedido, name='detalhe_pedido'),
+    #! http://127.0.0.1:8000/detalhe_pedido/1/
 
     path('sucesso/', sucesso, name='sucesso'),
     # http://127.0.0.1:8000/sucesso/
 
-    path('animais_disponiveis', animais_disponiveis),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # "+ static" é uma maneira de adicionar URLs de arquivos de mídia aos urlpatterns no Django

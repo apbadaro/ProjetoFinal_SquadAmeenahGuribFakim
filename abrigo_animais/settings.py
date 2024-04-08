@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "adocoes",
-    # "barra-de-pesquisa",
     "site_abrigo",
     "bootstrap5",
+    "detalhe_pedido",
+    # "barra-de-pesquisa",
 ]
 
 MIDDLEWARE = [
