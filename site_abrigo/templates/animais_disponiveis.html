@@ -20,8 +20,9 @@
             <td>{{ animal.nome }}</td>
             <td>{{ animal.sexo }}</td>
             <td>{{ animal.idade }}</td>
-            <td>{{ animal.foto }}</td>
-            <a href="{% url 'detalhe_pedido' animal.id %}" class="btn btn-primary">Detalhes</a>
+            <td> <img src="{{ animal.foto.url }}" alt="Foto do Animal" height="100"></td>
+            <!-- <td>{{ animal.foto }}</td>-->
+            <td><a href="{% url 'detalhe_pedido' animal.id %}" class="btn btn-primary">Detalhes</a></td>
             <!-- Adicione outras colunas conforme necessário -->
         </tr>
         {% endfor %}
