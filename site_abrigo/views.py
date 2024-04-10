@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Animal
+from adocoes.models import Animal
 
 # Create your views here.
 
@@ -11,4 +11,4 @@ def site(request):
 def animais_disponiveis(request):
     bichinho = Animal.objects.all()
     contexto = contexto = {'bichinho': bichinho,}
-    return render(request, 'animais_disponiveis.html', contexto)
+    return render(request, 'animais_disponiveis.html', contexto )
