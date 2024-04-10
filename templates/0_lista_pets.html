@@ -1,9 +1,11 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
 {% block title %}Página de animais disponíveis{% endblock %} 
 {% block content %}
 <body>
     <div class="container">
-        < class="formularios">
+        <div class="formularios">
         <h1>Pets para Adoção</h1>
         <table class="table">
             <thead>
@@ -30,7 +32,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        <a href="index.html"><button class="btn-gradiente">Voltar</button></a>
+        <a href="/"><button class="btn-gradiente">Voltar</button></a>
         <br>
         </div>
     </div>

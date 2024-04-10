@@ -15,11 +15,7 @@ def detalhe_pedido(request, animal_id):
         # Após processar, redirecione para uma página de sucesso
         return render(request, 'sucesso.html')
 
-    return render(request, '1_detalhes_pet.html', {'animal': animal, 'form': form})
-
-def sucesso(request):
-    return render(request, 'aguarde_retorno.html')
-
+    return render(request, 'detalhes_pet_pedido_adocao.html', {'animal': animal, 'form': form})
 
 def sucesso(request):
     return render(request, 'aguarde_retorno.html')
