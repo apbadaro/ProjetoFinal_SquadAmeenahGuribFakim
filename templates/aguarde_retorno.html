@@ -1,8 +1,9 @@
 <!-- Aguarde Retorno -->
-
 {% extends 'base.html' %}
 
-{% block title %}Página de Formulário teste{% endblock %}
+{% load static %}
+
+{% block title %}Página de Formulário{% endblock %}
 
 {% block content %}
 <!-- Tentei cria class formularios mas não funcionou -->
@@ -12,7 +13,9 @@
             <!-- Conteúdo do formulário aqui -->
             <h2>Parabéns pela sua iniciativa! </h2>
             <br>
-            <h3>Aguarde retorno da nossa equipe com a análise da sua solicitação de adoção em até 24 horas!</h3>
+            <h4>Aguarde retorno da nossa equipe com a análise da sua solicitação de adoção em até 24 horas!</h4>
+            <br>
+            <a href="/"><button class="btn-gradiente">Voltar/Sair</button></a>
             <br>
         </div>
     </div>

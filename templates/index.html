@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Página de Formulário{% endblock %}
+
+{% block content %}
+<!--* INÍCIO CONFIGURAÇÕES Cabeçalho) -->
+<!--  -->
+<!--* FIM CONFIGURAÇÕES Cabeçalho) -->
+<!-- <body> -->
+    <!-- <div class="background-verde"> -->
+<!--* INÍCIO HEADER (Nav/Logo/Cabeçalho/Menu) -->
+        <header>
+<!-- EXTENDS do base -->
+        </header>
+<!--* INÍCIO HEADER (Nav/Logo/Cabeçalho/Menu) -->
+<!--* INÍCIO CORPO da PÀGINA (PÁGINA SITE) -->
+        <main>
+            <div class="container">
+                <div class="main-text">
+                    <!-- main texto -->
+                    <h1>Feliz em ter você por aqui!</h1>
+                    <h2> Vamos conhecer os Pets disponíveis para adoção?</h2>
+                    <div>
+                        <button class="btn-gradiente">Quero ser Adotado</button>
+                        <!--! Verificar se retira essa img -->
+                        <!-- <img src="../statics/images/calendar2-week.svg" alt="Verificado"> -->
+                    </div>
+                </div>
+                <div class="main-img">
+                    <!-- Div Imagem Principal-->
+                    <img src="{% static 'img/capa-1.jpeg' %}" alt="Cachorro Foto de Capa">
+                     <!-- {% static 'img/' %} -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--? SEGUNDA PARTE - Resultados -->
+    <section class="resultados">
+        <div class="container">
+            <div class="resultados-text">
+                <P>Ajudando a unir vidas, formando novas famílias.</P>
+                <br>
+                <p>- Resultados dos últimos 12 meses -</P>
+            </div>
+            <div class="resultados-numero">
+                <p>
+                    <span>+70</span>
+                    adoções
+                </p>
+                <p>
+                    <span>+600</span>
+                    doações
+                </p>
+                <p>
+                    <span>+80</span>
+                    voluntarios
+                </p>
+                <p>
+                    <span>+120</span>
+                    resgates
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--? TERCEIRA PARTE - Diferenciais de Funções-->
+    <section class="diferenciais">
+        <div class="container">
+            <div class="card">
+                <img src="{% static 'img/emoji-smile.svg' %}" alt="emoji-smile">
+                <h3 class="titulo">Como fazer <em>doações</em> </h3>
+                <p>
+                    <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
+                    Os nossos abrigos, necessitam de colaboraçao constante para manter as necessidades básicas e dignas dos nossos pets!
+                    Você pode se cadastrar em nossa plataforma como <em>doador frequente</em>, contribuindo mensalmente, ou realizando doações exporádicas!  
+                </p>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/emoji-heart-eyes.svg' %}" alt="emoji-eyes">
+                <h3 class="titulo">Quero ser <em>voluntário</em></h3>
+                <p>
+                    <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
+                    O voluntário <em>P&t Home</em>, pode contribuir, participando das escalas de feiras de adoção ou demais eventos do nosso calendário comemorativo. O voluntário pode contribuir com o trabalho que mais se identificar e escolher a unidade onde deseja atuar.
+                </p>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/emoji-wink.svg' %}" alt="emoji-wink">
+                <h3 class="titulo">Por que ser um <em>cuidador</em></h3>
+                <p>
+                    <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
+                    Diferente do voluntário, nossos cuidadores são responsáveis por nos ajudar a cuidar dos pets resgatados, em suas residências, após procedimentos cirurgicos gerais ou de castração, até que esteja apto a convivência com os demais pets em uma das unidades <em>P&t Home</em>.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--? QUARTA PARTE - Casa x Visão Geral dos Abrigos-->
+    <section class="casa">
+        <div class="container">
+            <div class="casa-img">
+                <!--! Seria Muito difícil fazer uma página com carrossel de fotos? -->
+                <img src="{% static 'img/abrigo_animais.jpg' %}" alt="Abrigo_Animais">
+            </div>
+            <div class="casa-text">
+                <h2>
+                    Conheça a nossa história 
+                </h2>
+                <p>
+                    A P&t Home, foi fundada em 2013, tendo sua primeira unidade no bairro da Lapa-SP, e hoje conta com mais duas unidades em São Paulo, a segunda em Pinheiros e a terceira na Penha. 
+                </p>
+                <img src="{% static 'img/dog_cat.jpg' %}" alt="dog e cat" class="img-dogcat">
+                <p>
+                    <b>+felizes com a sua colaboração</b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--? QUINTA PARTE - Melhores-Lugares (usar esse card para as 3 filiais)-->
+    <section class="melhores-lugares">
+        <div class="container">
+            <p class="verde-escuro">Nossas unidades:</p>
+            <h2>Acolhemos e cuidamos com amor e carinho</h2>
+            <div class="cards">
+                <!-- card item 1 -->
+                <div class="card-item">
+                    <img src="{% static 'img/pethome-lapa.jpeg' %}" alt="Lapa-PetHome">
+                    <p class="local-casa">Lapa - SP</p>
+                    <p class="nome-casa">P&t Home Lapa</p>
+                    <p class="contato">
+                        11 3333 3331 <br> pet.home.lapa@gmail.com
+                    </p>
+                    <button>Saiba Mais</button>
+                </div>
+                <!-- card item 2 -->
+                <div class="card-item">
+                    <img src="{% static 'img/pethome-pinheiros.jpeg' %}" alt="Pinheiros-PetHome">
+                    <p class="local-casa">Pinheiros - SP</p>
+                    <p class="nome-casa">P&t Home Pinheiros</p>
+                    <p class="contato">
+                        11 3333 3332 <br> pet.home.pinheiros@gmail.com
+                    </p>
+                    <button>Saiba Mais</button>
+                </div>
+                <!-- card item 3 -->
+                <div class="card-item">
+                    <img src="{% static 'img/pethome-penha.jpg' %}" alt="Penha-PetHome">
+                    <p class="local-casa">Penha - SP</p>
+                    <p class="nome-casa">P&t Home Penha</p>
+                    <p class="contato">
+                        11 3333 3333 <br> pet.home.penha@gmail.com
+                    </p>
+                    <button>Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--? SEXTA PARTE - Newsletter! com Form -->
+    <section class="newsletter">
+        <!-- Vídeo 07 FIM -->
+        <div class="container">
+            <div class="box-newsletter">
+                <h2>Inscreva-se na nossa newsletter</h2>
+                <p>Inscreva-se para receber informações sobre eventos de adoção, agenda de multirões e dicas para o seu pet.</p>
+                <form>
+                    <input type="email" placeholder="Digite seu email">
+                    <!--! O Texto desse Botão está estourando! -->
+                    <button>Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+<!--* FIM CORPO da PÀGINA (PÁGINA SITE) -->
+<!--* INÍCIO RODAPÉ -->
+    <footer>
+
+    </footer>
+<!--* FIM RODAPÉ -->
+<!-- </body> -->
+
+{% endblock %}
+    

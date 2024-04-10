@@ -73,17 +73,7 @@ a.pop-up:hover {
     /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
     margin: 0 auto;
 }
-/* Não está funcionando: */
-.formularios {
-    /* Largura Máxima da tela: */
-    max-width: 1440px;
-    /* Espaçamento interno Topo e Inferior de 0 e Direita e Esquerda de 5%: */
-    padding: 0 10%;
-    /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
-    margin: 0 auto;
 
-    text-align: center;
-}
 
 section,
 footer {
@@ -558,3 +548,34 @@ footer .container a {
         background-color: red;
     }
 } */
+
+/*? Páginas de Formulários Extends: */
+/* Não está funcionando: */
+.formularios {
+    /* Largura Máxima da tela: */
+    max-width: 1440px;
+    /* Espaçamento interno Topo e Inferior de 0 e Direita e Esquerda de 5%: */
+    padding: 0 10%;
+    /* Em telas muito larga, mantem conteúdo ao centro igualando a D e E: */
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.formularios img.foto-detalhe-pet {
+    max-height: 100px;
+}
+
+/*? Página de Pets para Adoção */
+.foto-lista-pet{
+    max-width: 100px;
+    max-width: 100px;
+}
+
+/*? Página de Detalhes PET e Pedido de Adoção */
+.foto-detalhe-pet {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: block;
+}
