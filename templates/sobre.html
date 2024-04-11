@@ -1,0 +1,41 @@
+<!-- nome_do_seu_html.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página de Formulário{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="formularios">
+            <!--? Conteúdo do formulário abaixo -->
+
+            <div class="">
+                <h1>- Sobre -</h1>
+                <div class="pagina-construcao">
+                    <br>
+                    <!-- <h3>Página em Construção</h3> -->
+                    <div class="casa-text">
+                        <h2>
+                            Conheça a nossa história 
+                        </h2>
+                        <br><br>
+                        <p>
+                            A Pet Home, foi fundada em 2013, tendo sua primeira unidade no bairro da Lapa-SP, e hoje conta com mais duas unidades em São Paulo, a segunda em Pinheiros e a terceira na Penha. 
+                        </p>
+                        <br><br>
+                        <img src="{% static 'img/dog_cat.jpg' %}" alt="dog e cat" class="img-dogcat">
+                        <br><br>
+                        <p>
+                            <b>+felizes com a sua colaboração</b>
+                        </p>
+                    </div>
+                    <br>
+                    <a href="/"><button class="btn-gradiente">Voltar</button></a>
+                </div>
+            </div>  
+            
+            <!--? Conteúdo do formulário acima: -->
+            <br>        
+        </div>
+    </div>
+</body>
+{% endblock %}

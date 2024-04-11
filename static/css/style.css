@@ -86,6 +86,7 @@ footer {
     cursor: pointer;
     background-image: var(--degrade-btn);
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 button {
     border: none;
@@ -293,7 +294,7 @@ font-weight: 600;
     box-shadow: 0px 35px 97px -15px var(--muito-claro);
 }
 .melhores-lugares .cards img {
-    width: 120px;
+    width: 150px;
     border-radius: 5px;
 }
 .melhores-lugares .cards .local-casa {
@@ -428,6 +429,11 @@ footer .container a {
     margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
     padding: 0 20%; /* Adiciona algum espaço nas laterais */
     text-align: center;
+
+}
+/* Não funcionou: */
+.formularios div h1 {
+    color: var(--contraste-02);
 }
 
 /*? Página de Pets para Adoção */
@@ -459,7 +465,7 @@ th {
 
 
 /* ---------------------------------------- */
-
+/* 960px */
 /*? RESPONSIVO: Media Query */
 @media (max-width: 960px){
     /* Menu Icon */
@@ -515,6 +521,9 @@ th {
     .resultados .resultados-numero {
         width: 100%;
         text-align: center;
+    }
+    .resultados .resultados-text p {
+        font-size: 20px;
     }
     .resultados-numero {
         margin-top: 30px;
@@ -575,7 +584,8 @@ th {
 }
 
 /* Diminuir a tela ao máximo para verificar onde começa a quebrar o código para pegar esse número como limitador: */
-@media (max-width: 440px) {
+/* 440px */
+@media (max-width: 610px) {
     .resultados .resultados-numero{
         flex-direction: column;
     }
@@ -588,12 +598,77 @@ th {
     }
 }
 /* ----------------------------------------------- */
-
-
-
 /* Teste de Tamanho */
 /* @media (max-width: 960px){
     nav{
         background-color: red;
     }
 } */
+
+/*===================================================*/
+/* Formulário - Busca */
+/* Formulário de busca */
+section form {
+    display: flex;
+    align-items: center;
+}
+/* Campo de entrada de texto */
+#inputAnimals {
+    flex: 1;
+    margin-right: 10px;
+    height: 40px; /* Altura da barra de busca */
+    background-color: var(--muito-claro);
+    border: 1px solid var(--muito-claro);
+    border-radius: 5px; 
+    padding: 10px;
+    font-size: 16px; 
+    color: var(--contraste-02);
+}
+/* Botão de busca */
+.btn-primary {
+    background-color: var(--muito-escuro);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* Botão de busca-hover */
+.btn-primary:hover {
+    background-color: var(--muito-escuro);
+}
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Estilo para as células da tabela */
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--mediano);
+}
+/* Estilo para as células do cabeçalho */
+th {
+    background-color: var(--mediano);
+    color: var(--contraste-02);
+    font-size: 18px;
+}
+tbody tr td {
+    color: var(--contraste-02);
+}
+/* Linhas impares */
+tr:nth-child(odd) {
+    background-color: var(--claro);
+}
+/* Linhas pares */
+tr:nth-child(even) {
+    background-color: var(--muito-claro);
+}
+/* Tela é menor que 600px (responsividade para dispositivos móveis) */
+@media only screen and (max-width: 600px) {
+    th, td {
+        display: block;
+        width: 100%;
+    }
+}

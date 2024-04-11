@@ -1,0 +1,33 @@
+<!-- nome_do_seu_html.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página de Formulário{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="formularios">
+            <!--? Conteúdo do formulário abaixo -->
+            <div class="">
+                <h1>- Cuidador -</h1>
+                <div class="pagina-construcao">
+                    <br>
+                    <!-- <h3>Página em Construção</h3> -->
+                    <div class="card">
+                        <img src="{% static 'img/emoji-wink.svg' %}" alt="emoji-wink">
+                        <br>
+                        <h3 class="titulo">Por que ser um <em>cuidador</em></h3>
+                        <br>
+                        <p>
+                            Diferente do voluntário, nossos cuidadores são responsáveis por nos ajudar a cuidar dos pets resgatados, em suas residências, após procedimentos cirurgicos gerais ou de castração, até que esteja apto a convivência com os demais pets em uma das unidades <em>Pet Home</em>.
+                        </p>
+                    </div>
+                    <br>
+                    <a href="/"><button class="btn-gradiente">Voltar</button></a>
+                </div>
+            </div>
+            <!--? Conteúdo do formulário acima: -->
+            <br>        
+        </div>
+    </div>
+</body>
+{% endblock %}
