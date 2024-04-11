@@ -1,0 +1,35 @@
+<!-- nome_do_seu_html.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página de Formulário{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="formularios">
+            <!--? Conteúdo do formulário abaixo -->
+            <div class="">
+                <h1>- Doações -</h1>
+                <div class="pagina-construcao">
+                    <br>
+                    <!-- <h3>Página em Construção</h3> -->
+                    <div class="card">
+                        <br>
+                        <img src="{% static 'img/emoji-smile.svg' %}" alt="emoji-smile">
+                        <h3 class="titulo">Como fazer <em>doações</em> </h3>
+                        <br>
+                        <p>
+                            <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
+                            Os nossos abrigos, necessitam de colaboraçao constante para manter as necessidades básicas e dignas dos nossos pets!
+                            Você pode se cadastrar em nossa plataforma como <em>doador frequente</em>, contribuindo mensalmente, ou realizando doações exporádicas!  
+                        </p>
+                    </div>
+                    <br>
+                    <a href="/"><button class="btn-gradiente">Voltar</button></a>
+                </div>
+            </div> 
+            <!--? Conteúdo do formulário acima: -->
+            <br>        
+        </div>
+    </div>
+</body>
+{% endblock %}

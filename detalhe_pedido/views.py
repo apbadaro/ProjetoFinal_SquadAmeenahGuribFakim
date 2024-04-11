@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from adocoes.models import Animal
 from .forms import AdocaoForm
-from adocoes.models import Solicitante  # Importa a classe Solicitante do app "adocoes"
+from adocoes.models import Solicitante  #rever
 # from adocoes.forms import SolicitanteForm
 from .forms import SolicitanteForm
 
@@ -21,12 +21,24 @@ def detalhe_pedido(request, animal_id):
 def sucesso(request):
     return render(request, 'aguarde_retorno.html')
 
-# apagar teste
-def teste_disponiveis(request):
-    return render(request, '0_lista_pets.html')
+# Páginas em Construção:
+def doar(request):
+    return render(request, 'doacao.html')
+
+def cuidador(request):
+    return render(request, 'cuidador.html')
+
+def voluntario(request):
+    return render(request, 'voluntario.html')
+
+def sobre(request):
+    return render(request, 'sobre.html')
+
+def agenda(request):
+    return render(request, 'agenda.html')
 
 # =========================================================================
-# rever:
+# rever: EXTRA Não está funcionando
 
 def solicitar_adocao(request):
     if request.method == 'POST':

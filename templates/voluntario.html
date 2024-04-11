@@ -1,0 +1,34 @@
+<!-- nome_do_seu_html.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página de Formulário{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="formularios">
+            <!--? Conteúdo do formulário abaixo -->
+            <div class="">
+                <h1>- Voluntário -</h1>
+                <div class="pagina-construcao">
+                    <br>
+                    <!-- <h3>Página em Construção</h3> -->
+                    <div class="card">
+                        <img src="{% static 'img/emoji-heart-eyes.svg' %}" alt="emoji-eyes">
+                        <br>
+                        <h3 class="titulo">Quero ser <em>voluntário</em></h3>
+                        <br>
+                        <p>
+                            <!-- Dica para escrever Lorem Ipsum no VSCode = Lorem20 Enter -->
+                            O voluntário <em>Pet Home</em>, pode contribuir, participando das escalas de feiras de adoção ou demais eventos do nosso calendário comemorativo. O voluntário pode contribuir com o trabalho que mais se identificar e escolher a unidade onde deseja atuar.
+                        </p>
+                    </div>
+                    <br>
+                    <a href="/"><button class="btn-gradiente">Voltar</button></a>
+                </div>
+            </div>
+            <!--? Conteúdo do formulário acima: -->
+            <br>        
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -10,11 +10,8 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <!-- Caminho relativo: -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <!-- <script>
-        let imagePath = "{% static 'img/menu-branco.png' %}";
-    </script> 
-    <title>P&t Home</title> -->
-    <title>{% block title %}P&t Home{% endblock %}</title>
+    <title>Pet Home</title>
+    <title>{% block title %}Pet Home{% endblock %}</title>
 </head>
 <!--* FIM CONFIGURAÇÕES Cabeçalho) -->
 <body>
@@ -26,17 +23,15 @@
                 <nav>
                     <div class="logo">
                         <!-- Pet Home -->
-                        <a href="/"> P&t Home </a>
+                        <a href="/"> Pet Home </a>
                     </div>
                     <!-- Lista -->
                     <ul class="ul">
                         <li> <a href="/">Home</a></li>
-                        <li> <a href="/animais_disponiveis/">Lista Adotar</a></li>
-                        <!--! Precisa descobrir a rota do arquivo html lista de adoção -->
-                        <li> <a href="/detalhe_pedido/"> Teste Detalhes Pedido Adoção</a></li>
-                        <li> <a href="/sucesso/">Teste Sucesso Pedido</a></li>
-                        <li> <a href="voluntariado.html">Voluntariado</a></li>
-                        <li> <a href="search_results.html">Buscar Pets</a></li>
+                        <li> <a href="/animais_disponiveis/">Pets para Adotar</a></li>
+                        <li> <a href="/doar/">Quero Doar</a></li>
+                        <li> <a href="/voluntario/">Ser Voluntário</a></li>
+                        <li> <a href="/cuidador/">Ser Cuidador</a></li>
                         <li> 
                             <!--? Leva para Página de Admin Django -->
                             <a href="/admin/">
@@ -87,6 +82,7 @@
                     <a href="https://twitter.com/i/flow/login" target="_blank"><img src="{% static 'img/icon-twitter.svg' %}" alt="twitter.png"></a>
                     <!--  -->
                     <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'img/icon-instagram.svg' %}" alt="instagram.png"></a>
+                    <!--  -->
                     <a href="https://www.linkedin.com/feed/" target="_blank"><img src="{% static 'img/icon-linkedin.svg' %}" alt="linkedin.png"></a>                    
                 </div>
             </ul>
@@ -94,22 +90,22 @@
             <ul class="footer-listas">
                 <h4>Links</h4>
                 <li><a href="/">Home</a></li>
-                <li><a href="/animais_disponiveis/">Adoção</a></li>
-                <!--! Precisa descobrir a rota do arquivo html lista de adoção -->
-                <li><a href="doacao.html">Doação</a></li>
-                <li><a href="/detalhe_adotar/">+informações do Pet</a></li>
-                <li><a href="/animais_disponiveis/">Pets - Adoção</a></li>               
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="/animais_disponiveis/">Lista de Pets</a></li>
+                <!-- <li><a href="/detalhe_adotar/">+informações do Pet</a></li> -->
+                <li><a href="/doar/">Doação</a></li>
+                <li><a href="/voluntario/">Ser Voluntário</a></li>
+                <li><a href="/cuidador/">Ser Cuidador</a></li>               
+                <li><a href="/sobre/">Sobre</a></li>
             </ul>
             <!-- ul 03 -->
             <!--! Ver como Fazer Âncoras para Cars de contatos -->
             <ul class="footer-listas">
                 <h4>Suporte</h4>
-                <li><a href="sobre.html">FAQ</a></li>
+                <li><a href="/sobre/">FAQ</a></li>
                 <!-- <li><a href="#">Como Funciona</a></li> -->
-                <li><a href="agenda_eventos.html">Campanhas e Eventos</a></li>
-                <li><a href="agenda_eventos.html">Agenda de Eventos</a></li>
-                <li><a href="agenda_eventos.html">Comunicados</a></li>
+                <li><a href="/agenda/">Campanhas e Eventos</a></li>
+                <li><a href="/agenda/">Agenda de Eventos</a></li>
+                <li><a href="/agenda/">Comunicados</a></li>
             </ul>
             <!-- ul 04 -->
             <ul class="footer-listas">
@@ -126,7 +122,8 @@
             </ul>
         </div>
         <div class="minha-assinatura">
-            <p> &copysr; 2024 Squad Ameenah - Back End Developer</p>
+            <p> &copysr; 2024 Squad Ameenah - WoMakersCode </p>
+            <p> - Back End Developer (Python and Django) - </p>
             <p> - All Rights Reserved - </p>
             <p> Termos legais & Política de Privacidade </p>
         </div>
