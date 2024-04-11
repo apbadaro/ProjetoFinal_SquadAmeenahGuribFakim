@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Animal
+from adocoes.models import Animal
 
 def search_animals(request):
     query = request.GET.get('q')
@@ -12,7 +12,7 @@ def search_animals(request):
     else:
         animals = Animal.objects.all()
 
-    return render(request, 'search_results.html', {'animals': animals})
+    return render(request, 'search_result', {'animals': animals})
 
 # Esse trecho do cógigo verifica se há parâmetros de consulta na URL (usando request.GET.get('q')) 
 # e, se houver, realiza uma pesquisa no banco de dados usando os campos nome,especie e raca
