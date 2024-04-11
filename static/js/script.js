@@ -1,4 +1,3 @@
-
 //? CÓDIGO PARA MENU HAMBURGUER:
 
 // Capturar o Clic da Página:
@@ -16,16 +15,20 @@ menuIcon.addEventListener('click', ()=>{
         ul.classList.remove('ativo');
         // Para fechar um X no Amburguer:
         // document.querySelector('.menu-icon img').src = '/static/img/menu-branco.png';
-        document.querySelector('.menu-icon img').src = '../static/img/menu-branco.png';
-
+        // document.querySelector('.menu-icon img').src = '../static/img/menu-branco.png';
+        // document.querySelector('.menu-icon img').src = "{% static 'img/menu-branco.png' %}";
+        document.querySelector('.menu-icon img').src = menuBrancoUrl;
     }
 
     else {
         ul.classList.add('ativo');
         // Senão usa a imagem do amburguer fechado
         // document.querySelector('.menu-icon img').src = '/static/img/menu-close-branco.png';
-        document.querySelector('.menu-icon img').src = '../static/img/menu-close-branco.png';
+        // document.querySelector('.menu-icon img').src = '../static/img/menu-close-branco.png';
+        // document.querySelector('.menu-icon img').src = "{% static 'img/menu-close-branco.png' %}";
+        document.querySelector('.menu-icon img').src = menuCloseBrancoUrl;
         // menu-close-branco
     }
 });
+
 

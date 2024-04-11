@@ -7,10 +7,13 @@
     <meta charset="UTF-8">
     <meta httm-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <!-- Caminho relativo: -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <!-- <title>P&t Home</title> -->
+    <!-- <script>
+        let imagePath = "{% static 'img/menu-branco.png' %}";
+    </script> 
+    <title>P&t Home</title> -->
     <title>{% block title %}P&t Home{% endblock %}</title>
 </head>
 <!--* FIM CONFIGURAÇÕES Cabeçalho) -->
@@ -30,9 +33,7 @@
                         <li> <a href="/">Home</a></li>
                         <li> <a href="/animais_disponiveis/">Lista Adotar</a></li>
                         <!--! Precisa descobrir a rota do arquivo html lista de adoção -->
-                        <!-- Teste MM Botão Lista de Animais:teste_animais_disponiveis/ -->
-                        <li> <a href="/teste_disponiveis/">Teste Lista Adotar</a></li>
-                        <li> <a href="/detalhe_pedido/1/"> Teste Detalhes Pedido Adoção</a></li>
+                        <li> <a href="/detalhe_pedido/"> Teste Detalhes Pedido Adoção</a></li>
                         <li> <a href="/sucesso/">Teste Sucesso Pedido</a></li>
                         <li> <a href="voluntariado.html">Voluntariado</a></li>
                         <li> <a href="search_results.html">Buscar Pets</a></li>
@@ -45,7 +46,6 @@
                     </ul>
                     <!-- Menu Amburguer quando diminuir a tela -->
                     <div class="menu-icon">
-                        <!-- <img src="../static/img/menu-branco.png" alt="icone de menu"> -->
                         <img src="{% static 'img/menu-branco.png' %}" alt="icone de menu">
                     </div>
                 </nav>
@@ -136,6 +136,11 @@
     <!-- <script src="../static/js/script.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        // Carregamento de IMG para o arquivo script.js:
+        const menuBrancoUrl = "{% static 'img/menu-branco.png' %}";
+        const menuCloseBrancoUrl = "{% static 'img/menu-close-branco.png' %}";
+    </script>
 <!--* FIM JAVASCRIPT -->
 </body>
 </html>
