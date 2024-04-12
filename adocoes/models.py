@@ -69,6 +69,10 @@ class Solicitante(models.Model):
     _cpf = models.CharField(max_length=14, verbose_name="CPF", db_column="CPF")
     email = models.EmailField()
     telefone = models.CharField(max_length=15)
+    # Teste 2:
+    animal_id = models.IntegerField()
+    animal_nome = models.CharField(max_length=100)
+    # Teste acima
     data_cadastro = models.DateTimeField(
         auto_now_add=True, verbose_name="Data de Cadastro"
     )
@@ -85,7 +89,6 @@ class Solicitante(models.Model):
 
     def __str__(self):
         return f"{self.nome}"
-
 
 class Adocao(models.Model):
     solicitante = models.ForeignKey(Solicitante, on_delete=models.CASCADE)

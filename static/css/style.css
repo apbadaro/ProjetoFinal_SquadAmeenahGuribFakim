@@ -609,7 +609,7 @@ th {
 /* Formulário - Busca */
 /* Formulário de busca */
 section form {
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 /* Campo de entrada de texto */
@@ -617,6 +617,7 @@ section form {
     flex: 1;
     margin-right: 10px;
     height: 40px; /* Altura da barra de busca */
+    width: 60%;
     background-color: var(--muito-claro);
     border: 1px solid var(--muito-claro);
     border-radius: 5px; 
@@ -671,4 +672,56 @@ tr:nth-child(even) {
         display: block;
         width: 100%;
     }
+}
+
+/* ================================================== */
+/* Página Detalhes PET */
+
+/* .detalhe-pet {
+    display: flex; /* Define o container pai como flexível */
+    /* flex-direction: row; Organiza os itens em linha (horizontalmente) */
+/* } */ 
+
+.detalhe-pet-img {
+    border: #000000;
+}
+
+.detalhe-pet-dados {
+    border: #000000;
+}
+/* ========================== */
+
+/* CSS para organizar as duas divs lado a lado usando flexbox */
+.detalhe-pet > section {
+    display: flex; /* Ativa o modelo flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    align-items: center; 
+}
+
+.detalhe-pet-img {
+    flex: 0 0 50%; /* Define a largura da imagem para 50% da largura do contêiner flexível */
+    padding-top: 10px;
+}
+
+.detalhe-pet-dados {
+    flex: 0 0 50%; /* Define a largura dos dados para 50% da largura do contêiner flexível */
+    padding-left: 10px;
+    padding-top: 10px;
+    line-height: 1.5; /* Ajuste o valor conforme necessário */
+}
+
+
+/* ========================= */
+.detalhe-pet .detalhe-pet-img img {
+    /* background-color: #3D9776; */
+    box-shadow: #006344;
+    /* width: 400px; */
+}
+
+.detalhe-pet .detalhe-pet-dados h2,
+.detalhe-pet .detalhe-pet-dados p {
+    /* background-color: #3D9776; */
+    box-shadow: #006344;
+    color: var(--contraste-02);
+    text-align: left;
 }

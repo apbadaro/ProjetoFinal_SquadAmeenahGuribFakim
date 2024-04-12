@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from adocoes.models import Animal
 from .forms import AdocaoForm
-from adocoes.models import Solicitante  #rever
-# from adocoes.forms import SolicitanteForm
+from adocoes.models import Solicitante
 from .forms import SolicitanteForm
+# from .forms import SolicitacaoAdocaoForm
+# from detalhe_pedido.views import SolicitacaoAdocaoForm
+from django.urls import reverse
 
 # Create your views here.
 
@@ -37,15 +39,49 @@ def sobre(request):
 def agenda(request):
     return render(request, 'agenda.html')
 
-# =========================================================================
-# rever: EXTRA Não está funcionando
-
-def solicitar_adocao(request):
+# =======================================================================
+# Teste ok
+# SOLICITAÇÃO DE ADOÇÃO:
+def cadastrar_solicitante(request, animal_id):
+    animal_id = request.resolver_match.kwargs['animal_id']
     if request.method == 'POST':
         form = SolicitanteForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('pagina_sucesso')  # redirecionar para a página de sucesso
+            solicitante = form.save(commit=False)
+            solicitante.animal_id = animal_id  # Usando o animal_id fornecido na URL
+            solicitante.animal_nome = Animal.objects.get(id=animal_id).nome  # Definindo o nome do animal
+            solicitante.save()
+            return redirect('pagina_sucesso')
     else:
-        form = SolicitanteForm()
-    return render(request, 'solicitante_form.html', {'form': form})
+        form = SolicitanteForm(initial={'animal_id': animal_id})
+    
+    return render(request, 'detalhes_pet_pedido_adocao.html', {'form': form})
+
+
+
+# =======================================================================
+# Teste 2
+# SOLICITAÇÃO DE ADOÇÃO:
+
+def detalhes_pet_pedido_adocao(request, animal_id):
+    animal = get_object_or_404(Animal, id=animal_id)
+
+    
+    if request.method == 'POST':
+        form = Solicitante(request.POST)
+        if form.is_valid():
+            solicitante = form.save(commit=False)
+            solicitante.animal_id = animal_id  # Usando o animal_id fornecido na URL
+            solicitante.animal_nome = animal.nome  # Definindo o nome do animal
+            solicitante.save()
+            form.save()
+            return redirect('pagina_sucesso')
+    else:
+        form = Solicitante(initial={'animal_id': animal_id})
+    
+    return render(request, 'detalhes_pet_pedido_adocao.html', {'animal': animal, 'form': form})
+
+# Teste ok
+# SOLICITAÇÃO DE ADOÇÃO:
+def pagina_sucesso(request):
+    return render(request, 'aguarde_retorno.html')

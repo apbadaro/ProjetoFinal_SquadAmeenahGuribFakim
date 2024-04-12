@@ -17,10 +17,6 @@ class Animal(models.Model):
     pelagem = models.CharField(max_length=10, choices=[('curto', 'Curto'), ('medio', 'Medio'), ('longo', 'Longo')])
     foto = models.ImageField(upload_to='pets', blank=True, null=True)
 
-#! erro 
-    # class Meta:
-    #     db_tabela = 'adocoes_animal'
-
     class Meta:
         verbose_name = "Animal"
         verbose_name_plural = "Animais"
