@@ -1,0 +1,42 @@
+<!-- nome_do_seu_html.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Página de Formulário{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="formularios">
+            <!--? Conteúdo do formulário abaixo -->
+
+            <div class="">
+            <!-- <div class="background-verde"> -->
+                <h1>Seu Título</h1>
+                <div class="pagina-construcao">
+                    <br>
+                    <h2>Cadastro de Solicitante</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <section>
+                        <h2>Solicitar Adoção deste Pet</h2>
+                            <form method="post" action="{% url 'cadastrar_solicitante' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="animal_id" value="{{ animal.id }}">
+                                <input type="hidden" name="animal_nome" value="{{ animal.nome }}">
+                                {{ form.as_p }}
+                                <button type="submit">Solicitar</button>
+                            </form>
+                    </section>
+                    <br>
+                    <a href="/"><button class="btn-gradiente">Voltar</button></a>
+                </div>
+            </div>  
+            
+            <!--? Conteúdo do formulário acima: -->
+            <br>        
+        </div>
+    </div>
+</body>
+{% endblock %}

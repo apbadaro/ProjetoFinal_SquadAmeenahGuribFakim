@@ -9,7 +9,7 @@ from adocoes.models import Animal
 def site(request):
     return render(request, "index.html")
 
-
+# Página Lista de Pets:
 def animais_disponiveis(request):
     query = request.GET.get("q")
     if query:

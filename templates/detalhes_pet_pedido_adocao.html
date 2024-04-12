@@ -8,44 +8,33 @@
     <div class="container">
         <div class="formularios">
             <!--? Conteúdo do formulário aqui -->
-            <h1>Mais Detalhes do Pet</h1>
-            <!-- height="200" width="250" -->
-            <img class="detalhe-pet" src="{{ animal.foto.url }}" alt="Foto do Pet" >
-            <h2>{{ animal.nome }}</h2>
-            <p>Espécie: {{ animal.especie }}</p>
-            <p>Raça: {{ animal.raca }}</p>
-            <p>Sexo: {{ animal.sexo }}</p>
-            <p>Idade: {{ animal.idade }}</p>
-            <p>Castrado: {{ animal.castrado }}</p>
-            <p>Data Entrada: {{ animal.data_entrada }}</p>
-            <p>Histórico de Saúde: {{ animal.historico_saude }}</p>
-            <br><br>
-            <h2>Solicitar Adoção deste Pet</h2>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Solicitar</button>
-            </form>
+            <div class="detalhe-pet">
+                <h1>Mais detalhes sobre o Pet</h1>
+            <section>                
+                <!-- height="200" width="250" -->
+                <div class="detalhe-pet-img">
+                    <img class="detalhe-pet" src="{{ animal.foto.url }}" alt="Foto do Pet" >
+                </div>
+                <div class="detalhe-pet-dados">
+                    <h2><strong>{{ animal.nome }}</strong></h2>
+                    <p>Espécie: <strong>{{ animal.especie }}</strong></p>
+                    <p>Raça: <strong>{{ animal.raca }}</strong></p>
+                    <p>Sexo: <strong>{{ animal.sexo }}</strong></p>
+                    <p>Idade: <strong>{{ animal.idade }}</strong></p>
+                    <p>Castrado: <strong>{{ animal.castrado }}</strong></p>
+                    <p>Entrada no abrigo: <strong>{{ animal.data_entrada }}</strong></p>
+                    <p>Histórico de Saúde: <strong>{{ animal.historico_saude }}</strong></p>
+                </div>
+            </section>
+            </div>
+            <section>
+                <a href="/cadastrar_solicitante/"><button class="btn-gradiente">Adotar este Pet</button></a>
+                <!-- cadastrar_solicitante/ -->
+            </section>
+            <section>
+                <button class="btn-gradiente" onclick="window.history.back()">Voltar</button>
+            </section>
             <br>
-            <a href="/"><button class="btn-gradiente">Voltar/Sair</button></a>
-            <br>
-            <!-- TESTE 3 -->
-
-            <form method="post">
-                {% csrf_token %}
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone">
-                <button type="submit">Enviar</button>
-            </form>
-            <br>
-            <button class="btn-gradiente" onclick="window.history.back()">Voltar</button>
-            <br>        
         </div>
     </div>
 </body>
