@@ -14,6 +14,10 @@ O repositório encontra-se dividido em X partes:
 - Django
 - Python
 - SQLite
+- HTML5
+- CSS3
+- BootStrap
+- Trello - Metodologia Kanban
 - ...
 
 ## Integrantes da Squad
