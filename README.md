@@ -40,5 +40,6 @@ O repositório encontra-se dividido em 3 partes:
 |---|---|---|---|
 
 ## Links
--  Deploy do Projeto: [https://squadameenahguribfakim.pythonanywhere.com](https://squadameenahguribfakim.pythonanywhere.com/)
+- Apresentação do Projeto: [https://www.youtube.com/watch?v=gqxMxhM6D6I](https://www.youtube.com/watch?v=gqxMxhM6D6I)
+- Deploy do Projeto: [https://squadameenahguribfakim.pythonanywhere.com](https://squadameenahguribfakim.pythonanywhere.com/)
 - Trello do Projeto: [Metodologia Kanban](https://trello.com/invite/b/J8Ky6eXt/ATTIe37209bab10e924ed1b63ef198c933da92BC4EC4/squad-ameenah-projeto-final)
