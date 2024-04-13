@@ -14,15 +14,13 @@ O repositório encontra-se dividido em 3 partes:
 
 - **Cadastro de Animais:** Os funcionários podem cadastrar novos animais no sistema, incluindo informações como nome, espécie, sexo, idade, raça, histórico de saúde e data de entrada no abrigo. Além disso, é possível adicionar uma foto do animal.
 
-- **Detalhes de Cada Animal:** Ao clicar em um animal na lista de animais disponíveis, os usuários podem acessar uma página com detalhes completos sobre aquele animal específico. Isso inclui informações detalhadas como sexo, castrado, histórico de saúde, data de entrada no abrigo e uma foto do animal. Os detalhes permitem que os interessados conheçam melhor o animal e decidam se desejam iniciar o processo de adoção.
-
 - **Front-end Responsivo:** O front-end da aplicação foi desenvolvido utilizando HTML5, CSS3 e Bootstrap para garantir uma experiência de usuário agradável em dispositivos desktop e móveis.
 
 - **Gerenciamento de Funcionários:** Os administradores podem cadastrar novos funcionários, atribuir cargos e associar cada funcionário a uma conta de usuário para acesso ao sistema.
 
 - **Lista de Animais Disponíveis:** Os usuários podem visualizar uma lista completa dos animais disponíveis para adoção no abrigo. A lista inclui informações básicas de cada animal, como nome, espécie, raça e foto.
 
-- **Página de detalhes sobre o animal:** Os usuários podem escolher visualizar mais detalhes sobre um animal listado na página anterior. A página inclui informações mais específicas do animal, como nome, espécie, raça, idade, foto, informações médicas e de castração para ajudar ao usuário escolher adotar o animal.
+- **Página de Detalhes de Cada Animal:** Ao clicar em um animal na lista de animais disponíveis, os usuários podem escolher visualizar mais detalhes sobre ele. Isso inclui informações mais específicas, como nome, espécie, raça, idade, foto, informações médicas e de castração para ajudar o usuário escolher adotar o animal.
 
 - **Painel Administrativo:** O sistema possui um painel administrativo, em que os funcionários podem gerenciar todas as informações relacionadas aos animais, funcionários, solicitantes e adoções. Isso inclui a criação, atualização e exclusão de registros.
 
