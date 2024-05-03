@@ -1,3 +1,8 @@
+<p align="center"><img src="https://github.com/quasiEvil/ProjetoFinal_SquadAmeenahGuribFakim/assets/140989367/e2ae9bd9-13f2-4f70-ae46-9d3b8d77ab64)" height="auto">
+<br><br>
+<img src="https://github.com/quasiEvil/ProjetoFinal_SquadAmeenahGuribFakim/assets/140989367/bf85af97-f4d6-420b-85e2-b23827a9dbca" height="60"><img src="https://github.com/quasiEvil/ProjetoFinal_SquadAmeenahGuribFakim/assets/140989367/a5d109fc-beef-4ef7-b7aa-28c31d5eeb53" height="60">
+
+
 # Projeto Final: Abrigo de Animais
 O projeto final visa consolidar e aplicar o conhecimento adquirido em GitHub, HTML5, CSS3, Bancos de Dados e o Framework Django. Vamos transformar essa jornada de aprendizado em um prático e envolvente **Sistema de Abrigo para Animais com Django**.
 
@@ -43,3 +48,9 @@ O repositório encontra-se dividido em 3 partes:
 - Apresentação do Projeto: [https://www.youtube.com/watch?v=gqxMxhM6D6I](https://www.youtube.com/watch?v=gqxMxhM6D6I)
 - Deploy do Projeto: [https://squadameenahguribfakim.pythonanywhere.com](https://squadameenahguribfakim.pythonanywhere.com/)
 - Trello do Projeto: [Metodologia Kanban](https://trello.com/invite/b/J8Ky6eXt/ATTIe37209bab10e924ed1b63ef198c933da92BC4EC4/squad-ameenah-projeto-final)
+
+## Site em funcionamento
+![abrigoanimais-front](https://github.com/quasiEvil/ProjetoFinal_SquadAmeenahGuribFakim/assets/140989367/7d6cbddf-d153-473e-a652-5b2e0e10f940)
+
+## Admin em funcionamento
+![abrigoanimais-back](https://github.com/quasiEvil/ProjetoFinal_SquadAmeenahGuribFakim/assets/140989367/3725b1e8-50e2-4b40-90b4-f443283eb731)
