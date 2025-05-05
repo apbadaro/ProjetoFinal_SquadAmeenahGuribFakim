@@ -41,7 +41,7 @@ O repositório encontra-se dividido em 3 partes:
 - Trello (Metodologia Kanban)
 
 ## Integrantes da Squad
-[<img src="https://github.com/quasiEvil.png" width="60px;"/><br /><sub><a href="https://github.com/quasiEvil">Ana Paula Badaró</a></sub>](https://github.com/quasiEvil) | [<img src="https://github.com/jutdelu.png" width="60px;"/><br /><sub><a href="https://github.com/jutdelu">Juliana Torres Delunardo</a></sub>](https://github.com/jutdelu) | [<img src="https://github.com/Marcia-Moreira.png" width="60px;"/><br /><sub><a href="https://github.com/Marcia-Moreira">Marcia Moreira</a></sub>](https://github.com/Marcia-Moreira) |  [<img src="https://github.com/NuLima1.png" width="60px;"/><br /><sub><a href="https://github.com/NuLima1">Núbia Santos Lima</a></sub>](https://github.com/NuLima1) |
+[<img src="https://github.com/apbadaro.png" width="60px;"/><br /><sub><a href="https://github.com/quasiEvil">Ana Paula Badaró</a></sub>](https://github.com/apbadaro) | [<img src="https://github.com/jutdelu.png" width="60px;"/><br /><sub><a href="https://github.com/jutdelu">Juliana Torres Delunardo</a></sub>](https://github.com/jutdelu) | [<img src="https://github.com/Marcia-Moreira.png" width="60px;"/><br /><sub><a href="https://github.com/Marcia-Moreira">Marcia Moreira</a></sub>](https://github.com/Marcia-Moreira) |  [<img src="https://github.com/NuLima1.png" width="60px;"/><br /><sub><a href="https://github.com/NuLima1">Núbia Santos Lima</a></sub>](https://github.com/NuLima1) |
 |---|---|---|---|
 
 ## Links
